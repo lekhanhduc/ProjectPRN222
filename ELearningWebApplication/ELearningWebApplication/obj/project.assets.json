@@ -453,11 +453,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PRN212\\ProjectFinal\\ELearningWebApplication\\ELearningWebApplication\\ELearningWebApplication.csproj",
+      "projectUniqueName": "D:\\PRN222\\ProjectFinal\\ELearningWebApplication\\ELearningWebApplication\\ELearningWebApplication.csproj",
       "projectName": "ELearningWebApplication",
-      "projectPath": "D:\\PRN212\\ProjectFinal\\ELearningWebApplication\\ELearningWebApplication\\ELearningWebApplication.csproj",
+      "projectPath": "D:\\PRN222\\ProjectFinal\\ELearningWebApplication\\ELearningWebApplication\\ELearningWebApplication.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "D:\\PRN212\\ProjectFinal\\ELearningWebApplication\\ELearningWebApplication\\obj\\",
+      "outputPath": "D:\\PRN222\\ProjectFinal\\ELearningWebApplication\\ELearningWebApplication\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
