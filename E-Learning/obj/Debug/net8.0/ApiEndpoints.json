@@ -55,7 +55,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "E_Learning.Dto.Request.RoleCreationRequest",
+        "Type": "E_Learning.Entity.Role",
         "IsRequired": true
       }
     ],

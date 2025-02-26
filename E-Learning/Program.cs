@@ -3,7 +3,6 @@ using E_Learning.Data;
 using E_Learning.Entity;
 using E_Learning.Middlewares;
 using E_Learning.Repositories;
-using E_Learning.Repositories.HttpClient;
 using E_Learning.Servies;
 using E_Learning.Servies.Impl;
 using Microsoft.AspNetCore.Identity;

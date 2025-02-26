@@ -55,8 +55,9 @@ namespace E_Learning.Servies.Impl
             var role = await roleRepository.FindByRoleName(DefinitionRole.USER);
             if (role == null)
             {
-                logger.LogError("Role not existed");
-                throw new AppException(ErrorCode.ROLE_NOT_EXISTED);
+                role = new Role();
+                role.Name = DefinitionRole.USER;
+                await roleRepository.CreateRole(role);
             }
             user.Role = role;
             await userRepository.CreateUserAsync(user);

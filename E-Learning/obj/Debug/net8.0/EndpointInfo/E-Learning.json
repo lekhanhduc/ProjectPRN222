@@ -91,17 +91,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RoleCreationRequest"
+                "$ref": "#/components/schemas/Role"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/RoleCreationRequest"
+                "$ref": "#/components/schemas/Role"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/RoleCreationRequest"
+                "$ref": "#/components/schemas/Role"
               }
             }
           }
@@ -395,16 +395,6 @@
             "items": {
               "$ref": "#/components/schemas/User"
             },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "RoleCreationRequest": {
-        "type": "object",
-        "properties": {
-          "roleName": {
-            "type": "string",
             "nullable": true
           }
         },

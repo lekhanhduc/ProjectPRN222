@@ -1,5 +1,4 @@
-﻿using E_Learning.Dto.Request;
-using E_Learning.Entity;
+﻿using E_Learning.Entity;
 using E_Learning.Models.Response;
 using E_Learning.Servies;
 using Microsoft.AspNetCore.Authorization;
@@ -21,7 +20,7 @@ namespace E_Learning.Controllers
 
         [HttpPost("create-role")]
         [AllowAnonymous]
-        public async Task<ResponseData<Role>> CreateRole([FromBody] RoleCreationRequest request)
+        public async Task<ResponseData<Role>> CreateRole([FromBody] Role request)
         {
             var result = await roleService.CreateRole(request);
 

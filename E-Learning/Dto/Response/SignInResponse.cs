@@ -4,9 +4,9 @@
     {
         public string AccessToken { get; set; }
         public string RefreshToken { get; set; }
-        public int UserId { get; set; }
+        public long UserId { get; set; }
 
-        public SignInResponse(string accessToken, string refreshToken, int UserId)
+        public SignInResponse(string accessToken, string refreshToken, long UserId)
         {
             this.AccessToken = accessToken;
             this.RefreshToken = refreshToken;
