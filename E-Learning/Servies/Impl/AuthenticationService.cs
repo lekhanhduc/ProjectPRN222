@@ -63,7 +63,7 @@ namespace E_Learning.Servies.Impl
 
             var claims = new[]
     {
-        new Claim(JwtRegisteredClaimNames.Sub, user.Email),
+        new Claim("userId", user.Id.ToString()),
         new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
         new Claim("Authorities", user.Role.Name)
     };
@@ -89,7 +89,7 @@ namespace E_Learning.Servies.Impl
 
             logger.LogInformation("SignIn success for userId: {UserId}", user.Id);
 
-            return new SignInResponse(accessToken, refreshToken, user.Id);
+            return new SignInResponse(accessToken, refreshToken, user.Role.Name);
         }
 
 

@@ -4,13 +4,13 @@
     {
         public string AccessToken { get; set; }
         public string RefreshToken { get; set; }
-        public long UserId { get; set; }
+        public string Role { get; set; }
 
-        public SignInResponse(string accessToken, string refreshToken, long UserId)
+        public SignInResponse(string accessToken, string refreshToken, string role)
         {
             this.AccessToken = accessToken;
             this.RefreshToken = refreshToken;
-            this.UserId = UserId;
+            Role = role;
         }
     }
 }

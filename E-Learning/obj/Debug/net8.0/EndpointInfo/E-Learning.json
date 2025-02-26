@@ -442,9 +442,9 @@
             "type": "string",
             "nullable": true
           },
-          "userId": {
-            "type": "integer",
-            "format": "int64"
+          "role": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
