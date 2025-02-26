@@ -19,6 +19,8 @@ namespace E_Learning.Controllers
             this.userService = userService;
         }
 
+
+        [Authorize(Roles = "USER")]
         [HttpGet("find-all")]
         public async Task<ResponseData<IEnumerable<UserResponse>>> FetchAllUser()
         {
