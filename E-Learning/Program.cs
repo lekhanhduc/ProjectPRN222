@@ -3,6 +3,7 @@ using E_Learning.Data;
 using E_Learning.Entity;
 using E_Learning.Middlewares;
 using E_Learning.Repositories;
+using E_Learning.Repositories.HttpClient;
 using E_Learning.Servies;
 using E_Learning.Servies.Impl;
 using Microsoft.AspNetCore.Identity;
@@ -24,6 +25,16 @@ namespace E_Learning
                  {
                      options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
                  });
+
+            builder.Services.AddHttpClient<GoogleAuthClient>(client =>
+            {
+                client.BaseAddress = new Uri("https://oauth2.googleapis.com/");
+            });
+
+            builder.Services.AddHttpClient<GoogleUserInfoClient>(client =>
+            {
+                client.BaseAddress = new Uri("https://www.googleapis.com/");
+            });
 
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
