@@ -4,12 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace E_Learning.Entity
 {
     [Table("roles")]
-    public class Role
+    public class Role : BaseEntity<int>
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-
         [Required]
         [StringLength(50)]
         [Column("name")]
@@ -18,6 +14,6 @@ namespace E_Learning.Entity
         [Column("description")]
         public string? Description { get; set; }
 
-        public ICollection<User> Users { get; set; }
+        public virtual ICollection<User> Users { get; set; } = new List<User>();
     }
 }

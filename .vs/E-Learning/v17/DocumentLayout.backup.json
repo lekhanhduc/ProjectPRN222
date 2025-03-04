@@ -3,40 +3,12 @@
   "WorkspaceRootPath": "D:\\PRN222\\ProjectFinal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|d:\\prn222\\projectfinal\\e-learning\\servies\\impl\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\servies\\impl\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\PRN222\\ProjectFinal\\E-Learning\\Migrations\\20250304110840_Init Db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:E-Learning\\Migrations\\20250304110840_Init Db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|d:\\prn222\\projectfinal\\e-learning\\dto\\response\\signinresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\dto\\response\\signinresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|d:\\prn222\\projectfinal\\e-learning\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|d:\\prn222\\projectfinal\\e-learning\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|d:\\prn222\\projectfinal\\e-learning\\configuration\\jwtconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\configuration\\jwtconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|d:\\prn222\\projectfinal\\e-learning\\repositories\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\repositories\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|d:\\prn222\\projectfinal\\e-learning\\servies\\impl\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\servies\\impl\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|d:\\prn222\\projectfinal\\e-learning\\repositories\\httpclient\\googleauthclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\repositories\\httpclient\\googleauthclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|d:\\prn222\\projectfinal\\e-learning\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|d:\\prn222\\projectfinal\\e-learning\\data\\elearningdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\data\\elearningdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,118 +18,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SignInResponse.cs",
-              "DocumentMoniker": "D:\\PRN222\\ProjectFinal\\E-Learning\\Dto\\Response\\SignInResponse.cs",
-              "RelativeDocumentMoniker": "E-Learning\\Dto\\Response\\SignInResponse.cs",
-              "ToolTip": "D:\\PRN222\\ProjectFinal\\E-Learning\\Dto\\Response\\SignInResponse.cs",
-              "RelativeToolTip": "E-Learning\\Dto\\Response\\SignInResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T09:19:06.171Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "JwtConfiguration.cs",
-              "DocumentMoniker": "D:\\PRN222\\ProjectFinal\\E-Learning\\Configuration\\JwtConfiguration.cs",
-              "RelativeDocumentMoniker": "E-Learning\\Configuration\\JwtConfiguration.cs",
-              "ToolTip": "D:\\PRN222\\ProjectFinal\\E-Learning\\Configuration\\JwtConfiguration.cs",
-              "RelativeToolTip": "E-Learning\\Configuration\\JwtConfiguration.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA1wBkAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T08:54:15.148Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AuthenticationService.cs",
-              "DocumentMoniker": "D:\\PRN222\\ProjectFinal\\E-Learning\\Servies\\Impl\\AuthenticationService.cs",
-              "RelativeDocumentMoniker": "E-Learning\\Servies\\Impl\\AuthenticationService.cs",
-              "ToolTip": "D:\\PRN222\\ProjectFinal\\E-Learning\\Servies\\Impl\\AuthenticationService.cs",
-              "RelativeToolTip": "E-Learning\\Servies\\Impl\\AuthenticationService.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAAAF0AAAAAAAAAAAAAAA==",
+              "Title": "20250304110840_Init Db.cs",
+              "DocumentMoniker": "D:\\PRN222\\ProjectFinal\\E-Learning\\Migrations\\20250304110840_Init Db.cs",
+              "RelativeDocumentMoniker": "E-Learning\\Migrations\\20250304110840_Init Db.cs",
+              "ToolTip": "D:\\PRN222\\ProjectFinal\\E-Learning\\Migrations\\20250304110840_Init Db.cs",
+              "RelativeToolTip": "E-Learning\\Migrations\\20250304110840_Init Db.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T08:52:10.513Z",
+              "WhenOpened": "2025-03-04T11:08:40.69Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "D:\\PRN222\\ProjectFinal\\E-Learning\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "E-Learning\\Controllers\\UsersController.cs",
-              "ToolTip": "D:\\PRN222\\ProjectFinal\\E-Learning\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "E-Learning\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACEAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ELearningDbContext.cs",
+              "DocumentMoniker": "D:\\PRN222\\ProjectFinal\\E-Learning\\Data\\ELearningDbContext.cs",
+              "RelativeDocumentMoniker": "E-Learning\\Data\\ELearningDbContext.cs",
+              "ToolTip": "D:\\PRN222\\ProjectFinal\\E-Learning\\Data\\ELearningDbContext.cs",
+              "RelativeToolTip": "E-Learning\\Data\\ELearningDbContext.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAwwGMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T08:49:53.618Z",
+              "WhenOpened": "2025-03-04T11:08:17.696Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RoleRepository.cs",
-              "DocumentMoniker": "D:\\PRN222\\ProjectFinal\\E-Learning\\Repositories\\RoleRepository.cs",
-              "RelativeDocumentMoniker": "E-Learning\\Repositories\\RoleRepository.cs",
-              "ToolTip": "D:\\PRN222\\ProjectFinal\\E-Learning\\Repositories\\RoleRepository.cs",
-              "RelativeToolTip": "E-Learning\\Repositories\\RoleRepository.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAApwAgAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T08:22:36.393Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\PRN222\\ProjectFinal\\E-Learning\\Program.cs",
-              "RelativeDocumentMoniker": "E-Learning\\Program.cs",
-              "ToolTip": "D:\\PRN222\\ProjectFinal\\E-Learning\\Program.cs",
-              "RelativeToolTip": "E-Learning\\Program.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAA3wB4AAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T08:05:40.62Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "D:\\PRN222\\ProjectFinal\\E-Learning\\Servies\\Impl\\UserService.cs",
-              "RelativeDocumentMoniker": "E-Learning\\Servies\\Impl\\UserService.cs",
-              "ToolTip": "D:\\PRN222\\ProjectFinal\\E-Learning\\Servies\\Impl\\UserService.cs",
-              "RelativeToolTip": "E-Learning\\Servies\\Impl\\UserService.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAIBhwD4AAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T08:16:50.6Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "GoogleAuthClient.cs",
-              "DocumentMoniker": "D:\\PRN222\\ProjectFinal\\E-Learning\\Repositories\\HttpClient\\GoogleAuthClient.cs",
-              "RelativeDocumentMoniker": "E-Learning\\Repositories\\HttpClient\\GoogleAuthClient.cs",
-              "ToolTip": "D:\\PRN222\\ProjectFinal\\E-Learning\\Repositories\\HttpClient\\GoogleAuthClient.cs",
-              "RelativeToolTip": "E-Learning\\Repositories\\HttpClient\\GoogleAuthClient.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAmwAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T08:05:25.146Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\PRN222\\ProjectFinal\\E-Learning\\appsettings.json",
-              "RelativeDocumentMoniker": "E-Learning\\appsettings.json",
-              "ToolTip": "D:\\PRN222\\ProjectFinal\\E-Learning\\appsettings.json",
-              "RelativeToolTip": "E-Learning\\appsettings.json",
-              "ViewState": "AgIAAAcAAAAAAAAAAADwvxYAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-26T08:03:01.32Z"
             }
           ]
         }

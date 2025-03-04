@@ -5,13 +5,8 @@ using E_Learning.Common;
 namespace E_Learning.Entity
 {
     [Table("courses")]
-    public class Course
+    public class Course : BaseEntity<long>
     {
-        [Key]
-        [Required]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Column("id")]
-        public long Id { get; set; }
 
         [Required]
         [Column("title")]
@@ -41,7 +36,14 @@ namespace E_Learning.Entity
         [Column("updated_at")]
         public DateTime UpdatedAt { get; set; }
 
-        [ForeignKey("user_id")]
+        [ForeignKey("Author")]
+        [Column("user_id")]
+        public long AuthorId { get; set; }
         public User Author { get; set; }
+
+        public ICollection<Review> Reviews { get; set; } = new List<Review>();
+        public ICollection<Certificate> Certificates { get; set; } = new List<Certificate>();
+        public ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
+        public ICollection<Favorite> Favorites { get; set; } = new List<Favorite>();
     }
 }
