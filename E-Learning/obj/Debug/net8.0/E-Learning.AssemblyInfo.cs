@@ -20,6 +20,7 @@ using System.Reflection;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1ef2cd07ed09954ec15f23c646cec07492c54211")]
 =======
 <<<<<<< Updated upstream:E-Learning/obj/Debug/net8.0/E-Learning.AssemblyInfo.cs
@@ -60,6 +61,9 @@ using System.Reflection;
 >>>>>>> 97e1fb0 (fix bug)
 >>>>>>> 65bd4e6 (fix conflict when rebase)
 >>>>>>> 1725848 (fix conflict when rebase)
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+172584821e6a540d794a606a118fd9e7c74669a5")]
+>>>>>>> 0210022 (khanhduc 04.03.2025)
 [assembly: System.Reflection.AssemblyProductAttribute("E-Learning")]
 [assembly: System.Reflection.AssemblyTitleAttribute("E-Learning")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
