@@ -26,6 +26,7 @@
   "WorkspaceRootPath": "E:\\FPT_UNIVERSITY\\PRN222\\E-Learning\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|e:\\fpt_university\\prn222\\e-learning\\e-learning\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -44,7 +45,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|e:\\fpt_university\\prn222\\e-learning\\e-learning\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+<<<<<<< HEAD
 >>>>>>> 459715e (project-course 26.02.2025)
+=======
+=======
+      "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|d:\\prn222\\projectfinal\\e-learning\\data\\elearningdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\data\\elearningdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> 152b225 (Created database with Code first)
+>>>>>>> 340b601 (fix conflict when rebase)
     }
   ],
   "DocumentGroupContainers": [
@@ -54,6 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
 <<<<<<< HEAD
           "SelectedChildIndex": 2,
           "Children": [
@@ -82,6 +91,8 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-04T16:17:23.884Z",
 =======
+=======
+>>>>>>> 340b601 (fix conflict when rebase)
           "SelectedChildIndex": 1,
           "Children": [
             {
@@ -200,7 +211,26 @@
               "EditorCaption": ""
 =======
               "WhenOpened": "2025-02-26T08:18:55.159Z"
+<<<<<<< HEAD
 >>>>>>> 5b0e28e (project-course-prn)
+=======
+=======
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ELearningDbContext.cs",
+              "DocumentMoniker": "D:\\PRN222\\ProjectFinal\\E-Learning\\Data\\ELearningDbContext.cs",
+              "RelativeDocumentMoniker": "E-Learning\\Data\\ELearningDbContext.cs",
+              "ToolTip": "D:\\PRN222\\ProjectFinal\\E-Learning\\Data\\ELearningDbContext.cs",
+              "RelativeToolTip": "E-Learning\\Data\\ELearningDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T11:08:17.696Z",
+              "EditorCaption": ""
+>>>>>>> 152b225 (Created database with Code first)
+>>>>>>> 340b601 (fix conflict when rebase)
             }
           ]
         }
