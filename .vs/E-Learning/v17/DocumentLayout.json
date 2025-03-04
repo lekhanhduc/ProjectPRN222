@@ -28,6 +28,7 @@
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|e:\\fpt_university\\prn222\\e-learning\\e-learning\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -51,6 +52,8 @@
 =======
 =======
 =======
+=======
+>>>>>>> 65bd4e6 (fix conflict when rebase)
       "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|d:\\prn222\\projectfinal\\e-learning\\configuration\\redisconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\configuration\\redisconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -59,7 +62,12 @@
       "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\entity\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< HEAD
 >>>>>>> 1ef2cd0 (04.03.2025)
+=======
+=======
+>>>>>>> 97e1fb0 (fix bug)
+>>>>>>> 65bd4e6 (fix conflict when rebase)
       "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|d:\\prn222\\projectfinal\\e-learning\\data\\elearningdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\data\\elearningdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
 >>>>>>> 152b225 (Created database with Code first)
@@ -231,6 +239,7 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< HEAD
               "Title": "RedisConfiguration.cs",
               "DocumentMoniker": "D:\\PRN222\\ProjectFinal\\E-Learning\\Configuration\\RedisConfiguration.cs",
               "RelativeDocumentMoniker": "E-Learning\\Configuration\\RedisConfiguration.cs",
@@ -257,12 +266,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+=======
+>>>>>>> 97e1fb0 (fix bug)
               "Title": "ELearningDbContext.cs",
               "DocumentMoniker": "D:\\PRN222\\ProjectFinal\\E-Learning\\Data\\ELearningDbContext.cs",
               "RelativeDocumentMoniker": "E-Learning\\Data\\ELearningDbContext.cs",
               "ToolTip": "D:\\PRN222\\ProjectFinal\\E-Learning\\Data\\ELearningDbContext.cs",
               "RelativeToolTip": "E-Learning\\Data\\ELearningDbContext.cs",
+<<<<<<< HEAD
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAuAAAAAAAAAA==",
+=======
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+>>>>>>> 97e1fb0 (fix bug)
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-04T11:08:17.696Z",
               "EditorCaption": ""
