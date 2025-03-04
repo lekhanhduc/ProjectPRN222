@@ -18,6 +18,7 @@ using System.Reflection;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1ef2cd07ed09954ec15f23c646cec07492c54211")]
 =======
 <<<<<<< Updated upstream:E-Learning/obj/Debug/net8.0/E-Learning.AssemblyInfo.cs
@@ -30,11 +31,19 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+459715ec8776a2ae8f95e0777685c3a9a8b74195")]
 >>>>>>> 5b0e28e (project-course-prn)
 =======
+=======
+>>>>>>> 1187ebf (fix conflict when rebase)
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+459715ec8776a2ae8f95e0777685c3a9a8b74195")]
 =======
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3b550ed6ba3976d449551c5b45b7a57e18f3f35")]
 >>>>>>> 152b225 (Created database with Code first)
+<<<<<<< HEAD
 >>>>>>> 340b601 (fix conflict when rebase)
+=======
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+152b2251cb90593ac8a19d3ad41b6f9b0197c63d")]
+>>>>>>> 1ef2cd0 (04.03.2025)
+>>>>>>> 1187ebf (fix conflict when rebase)
 [assembly: System.Reflection.AssemblyProductAttribute("E-Learning")]
 [assembly: System.Reflection.AssemblyTitleAttribute("E-Learning")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
