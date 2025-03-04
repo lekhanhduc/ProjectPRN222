@@ -20,7 +20,11 @@ namespace E_Learning.Controllers
 
         [HttpPost("create-role")]
         [AllowAnonymous]
+<<<<<<< HEAD
         public async Task<ApiResponse<Role>> CreateRole([FromBody] Role request)
+=======
+        public async Task<ResponseData<Role>> CreateRole([FromBody] Role request)
+>>>>>>> 459715e (project-course 26.02.2025)
         {
             var result = await roleService.CreateRole(request);
 

@@ -21,8 +21,13 @@ namespace E_Learning.Controllers
 
 
         [Authorize(Roles = "USER")]
+<<<<<<< HEAD
         [HttpGet]
         public async Task<ApiResponse<IEnumerable<UserResponse>>> FetchAllUser()
+=======
+        [HttpGet("find-all")]
+        public async Task<ResponseData<IEnumerable<UserResponse>>> FetchAllUser()
+>>>>>>> 459715e (project-course 26.02.2025)
         {
             var users = await userService.FindAll();
 

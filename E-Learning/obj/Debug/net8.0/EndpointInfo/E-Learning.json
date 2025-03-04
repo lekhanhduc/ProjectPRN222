@@ -1108,7 +1108,11 @@
         },
         "additionalProperties": false
       },
+<<<<<<< HEAD
       "RoleApiResponse": {
+=======
+      "RoleResponseData": {
+>>>>>>> 459715e (project-course 26.02.2025)
         "type": "object",
         "properties": {
           "code": {

@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "uike9fiRbn4=",
+=======
+  "dgSpecHash": "SF8YzNmhV+w=",
+>>>>>>> 459715e (project-course 26.02.2025)
   "success": true,
   "projectFilePath": "D:\\PRN222\\ProjectFinal\\E-Learning\\E-Learning.csproj",
   "expectedPackageFiles": [

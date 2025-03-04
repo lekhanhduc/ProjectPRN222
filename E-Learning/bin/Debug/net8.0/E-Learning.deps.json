@@ -11,7 +11,10 @@
           "AspNetCoreRateLimit.Redis": "2.0.0",
           "CloudinaryDotNet": "1.27.4",
           "Confluent.Kafka": "2.8.0",
+<<<<<<< HEAD
           "Elastic.Clients.Elasticsearch": "8.17.1",
+=======
+>>>>>>> 459715e (project-course 26.02.2025)
           "Microsoft.AspNetCore.Authentication.Google": "8.0.2",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
           "Microsoft.AspNetCore.Identity": "2.2.0",
