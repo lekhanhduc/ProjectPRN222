@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "D:\\PRN222\\ProjectFinal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\PRN222\\ProjectFinal\\E-Learning\\Migrations\\20250304110840_Init Db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:E-Learning\\Migrations\\20250304110840_Init Db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|d:\\prn222\\projectfinal\\e-learning\\data\\elearningdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\data\\elearningdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -23,25 +19,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20250304110840_Init Db.cs",
-              "DocumentMoniker": "D:\\PRN222\\ProjectFinal\\E-Learning\\Migrations\\20250304110840_Init Db.cs",
-              "RelativeDocumentMoniker": "E-Learning\\Migrations\\20250304110840_Init Db.cs",
-              "ToolTip": "D:\\PRN222\\ProjectFinal\\E-Learning\\Migrations\\20250304110840_Init Db.cs",
-              "RelativeToolTip": "E-Learning\\Migrations\\20250304110840_Init Db.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T11:08:40.69Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "ELearningDbContext.cs",
               "DocumentMoniker": "D:\\PRN222\\ProjectFinal\\E-Learning\\Data\\ELearningDbContext.cs",
               "RelativeDocumentMoniker": "E-Learning\\Data\\ELearningDbContext.cs",
               "ToolTip": "D:\\PRN222\\ProjectFinal\\E-Learning\\Data\\ELearningDbContext.cs",
               "RelativeToolTip": "E-Learning\\Data\\ELearningDbContext.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAwwGMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-04T11:08:17.696Z",
               "EditorCaption": ""

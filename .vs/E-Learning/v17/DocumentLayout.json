@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "D:\\PRN222\\ProjectFinal\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|d:\\prn222\\projectfinal\\e-learning\\configuration\\redisconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\configuration\\redisconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|d:\\prn222\\projectfinal\\e-learning\\entity\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\entity\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|d:\\prn222\\projectfinal\\e-learning\\data\\elearningdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\data\\elearningdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,12 +27,38 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "RedisConfiguration.cs",
+              "DocumentMoniker": "D:\\PRN222\\ProjectFinal\\E-Learning\\Configuration\\RedisConfiguration.cs",
+              "RelativeDocumentMoniker": "E-Learning\\Configuration\\RedisConfiguration.cs",
+              "ToolTip": "D:\\PRN222\\ProjectFinal\\E-Learning\\Configuration\\RedisConfiguration.cs",
+              "RelativeToolTip": "E-Learning\\Configuration\\RedisConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T14:23:05.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\PRN222\\ProjectFinal\\E-Learning\\Entity\\User.cs",
+              "RelativeDocumentMoniker": "E-Learning\\Entity\\User.cs",
+              "ToolTip": "D:\\PRN222\\ProjectFinal\\E-Learning\\Entity\\User.cs",
+              "RelativeToolTip": "E-Learning\\Entity\\User.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAA5wDgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T14:22:49.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ELearningDbContext.cs",
               "DocumentMoniker": "D:\\PRN222\\ProjectFinal\\E-Learning\\Data\\ELearningDbContext.cs",
               "RelativeDocumentMoniker": "E-Learning\\Data\\ELearningDbContext.cs",
               "ToolTip": "D:\\PRN222\\ProjectFinal\\E-Learning\\Data\\ELearningDbContext.cs",
               "RelativeToolTip": "E-Learning\\Data\\ELearningDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-04T11:08:17.696Z",
               "EditorCaption": ""

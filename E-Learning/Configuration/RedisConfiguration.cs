@@ -15,4 +15,5 @@ namespace E_Learning.Configuration
             services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(redisConnectionString));
         }
     }
+
 }
