@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace E_Learning.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/users")]
     [ApiController]
     public class UsersController : ControllerBase
     {
@@ -21,41 +21,41 @@ namespace E_Learning.Controllers
 
 
         [Authorize(Roles = "USER")]
-        [HttpGet("find-all")]
-        public async Task<ResponseData<IEnumerable<UserResponse>>> FetchAllUser()
+        [HttpGet]
+        public async Task<ApiResponse<IEnumerable<UserResponse>>> FetchAllUser()
         {
             var users = await userService.FindAll();
 
-            return new ResponseData<IEnumerable<UserResponse>>(
+            return new ApiResponse<IEnumerable<UserResponse>>(
                 code: 200,
                 message: "Fetch All Users",
-                data: users
+                result: users
             );
         }
 
-        [HttpPost("create")]
-        [AllowAnonymous] // Bỏ qua xác thực cho endpoint này
-        public async Task<ResponseData<UserCreationResponse>> CreateUser([FromBody] UserCreationRequest request)
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<ApiResponse<UserCreationResponse>> CreateUser([FromBody] UserCreationRequest request)
         {
             var users = await userService.CreateUser(request);
 
-            return new ResponseData<UserCreationResponse>(
+            return new ApiResponse<UserCreationResponse>(
                 code: 201,
                 message: "Created user",
-                data: users
+                result: users
             );
         }
 
         [HttpGet("verification")]
-        [AllowAnonymous] // Bỏ qua xác thực cho endpoint này
-        public async Task<ResponseData<VerificationResponse>> Verification([FromQuery] string email, [FromQuery] string otp)
+        [AllowAnonymous]
+        public async Task<ApiResponse<VerificationResponse>> Verification([FromQuery] string email, [FromQuery] string otp)
         {
             var result = await userService.Verification(email, otp);
 
-            return new ResponseData<VerificationResponse>(
+            return new ApiResponse<VerificationResponse>(
                 code: 201,
                 message: "Verfication success",
-                data: result
+                result: result
             );
         }
 

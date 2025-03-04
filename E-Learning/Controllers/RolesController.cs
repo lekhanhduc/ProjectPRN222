@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace E_Learning.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/roles")]
     [ApiController]
     public class RolesController : ControllerBase
     {
@@ -20,11 +20,11 @@ namespace E_Learning.Controllers
 
         [HttpPost("create-role")]
         [AllowAnonymous]
-        public async Task<ResponseData<Role>> CreateRole([FromBody] Role request)
+        public async Task<ApiResponse<Role>> CreateRole([FromBody] Role request)
         {
             var result = await roleService.CreateRole(request);
 
-            return new ResponseData<Role>(201, "Created success", result);
+            return new ApiResponse<Role>(201, "Created success", result);
         }
     }
 }

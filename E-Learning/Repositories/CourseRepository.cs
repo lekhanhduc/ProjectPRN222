@@ -1,6 +1,5 @@
 ﻿using E_Learning.Data;
 using E_Learning.Entity;
-using E_Learning.Models.Request;
 using Microsoft.EntityFrameworkCore;
 
 namespace E_Learning.Repositories
@@ -15,10 +14,15 @@ namespace E_Learning.Repositories
             _context = context;
         }
 
-        public Task<Course> CreateCourse(CreationCourseRequest request)
+        public async Task CreateCourse(Course course)
         {
-            throw new NotImplementedException();
+            await _context.Courses.AddAsync(course);
+            await _context.SaveChangesAsync();
+
+            // Load Author ngay sau khi save mà không cần query lại toàn bộ entity
+            await _context.Entry(course).Reference(c => c.Author).LoadAsync();
         }
+
 
         public async Task<IEnumerable<Course>> FindAll()
         {

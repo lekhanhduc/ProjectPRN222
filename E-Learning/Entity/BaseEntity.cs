@@ -11,10 +11,10 @@ namespace E_Learning.Entity
         public T Id { get; set; }
 
         [Column("created_by")]
-        public string CreatedBy { get; set; }
+        public string? CreatedBy { get; set; }
 
         [Column("updated_by")]
-        public string UpdatedBy { get; set; }
+        public string? UpdatedBy { get; set; }
 
         [Column("create_at")]
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
@@ -22,4 +22,5 @@ namespace E_Learning.Entity
         [Column("update_at")]
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
     }
+
 }

@@ -54,7 +54,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("create_at");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("created_by");
 
@@ -97,7 +96,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("update_at");
 
                     b.Property<string>("UpdatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("updated_by");
 
@@ -134,7 +132,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("create_at");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("created_by");
 
@@ -156,7 +153,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("update_at");
 
                     b.Property<string>("UpdatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("updated_by");
 
@@ -194,7 +190,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("create_at");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("created_by");
 
@@ -207,7 +202,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("update_at");
 
                     b.Property<string>("UpdatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("updated_by");
 
@@ -237,7 +231,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("create_at");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("created_by");
 
@@ -252,7 +245,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("update_at");
 
                     b.Property<string>("UpdatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("updated_by");
 
@@ -288,7 +280,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("created_at");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("created_by");
 
@@ -306,13 +297,14 @@ namespace E_Learning.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("language");
 
-                    b.Property<int>("Level")
-                        .HasColumnType("int")
+                    b.Property<string>("Level")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("level");
 
-                    b.Property<decimal>("Point")
+                    b.Property<decimal>("Price")
                         .HasColumnType("decimal(18, 2)")
-                        .HasColumnName("point");
+                        .HasColumnName("price");
 
                     b.Property<string>("Thumbnail")
                         .IsRequired()
@@ -324,12 +316,11 @@ namespace E_Learning.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("title");
 
-                    b.Property<DateTime>("UpdatedAt")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2")
                         .HasColumnName("updated_at");
 
                     b.Property<string>("UpdatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("updated_by");
 
@@ -357,7 +348,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("create_at");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("created_by");
 
@@ -374,7 +364,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("update_at");
 
                     b.Property<string>("UpdatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("updated_by");
 
@@ -407,7 +396,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("create_at");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("created_by");
 
@@ -416,7 +404,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("update_at");
 
                     b.Property<string>("UpdatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("updated_by");
 
@@ -454,7 +441,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("create_at");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("created_by");
 
@@ -472,7 +458,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("update_at");
 
                     b.Property<string>("UpdatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("updated_by");
 
@@ -505,7 +490,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("create_at");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("created_by");
 
@@ -517,7 +501,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("update_at");
 
                     b.Property<string>("UpdatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("updated_by");
 
@@ -550,7 +533,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("create_at");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("created_by");
 
@@ -583,7 +565,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("update_at");
 
                     b.Property<string>("UpdatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("updated_by");
 
@@ -618,7 +599,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("create_at");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("created_by");
 
@@ -640,7 +620,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("update_at");
 
                     b.Property<string>("UpdatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("updated_by");
 
@@ -677,7 +656,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("create_at");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("created_by");
 
@@ -695,7 +673,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("update_at");
 
                     b.Property<string>("UpdatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("updated_by");
 
@@ -731,7 +708,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("create_at");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("created_by");
 
@@ -750,7 +726,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("update_at");
 
                     b.Property<string>("UpdatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("updated_by");
 
@@ -777,7 +752,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("create_at");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("created_by");
 
@@ -830,7 +804,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("update_at");
 
                     b.Property<string>("UpdatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("updated_by");
 

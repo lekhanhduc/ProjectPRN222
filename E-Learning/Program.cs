@@ -41,6 +41,7 @@ namespace E_Learning
             builder.Services.AddCustomJwtAuthentication(builder.Configuration);  // JWT
             builder.Services.AddCustomCors(allowedOrigins);                     // CORS
             builder.Services.CustomizeRedis(builder.Configuration);            // Redis
+            builder.Services.AddElasticSearch(builder.Configuration);         // ElasticSearch
 
             builder.Services.AddHttpContextAccessor();
             builder.Services.AddSingleton<CloudinaryService>();

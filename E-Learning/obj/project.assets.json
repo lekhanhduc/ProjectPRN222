@@ -112,6 +112,35 @@
           }
         }
       },
+      "Elastic.Clients.Elasticsearch/8.17.1": {
+        "type": "package",
+        "dependencies": {
+          "Elastic.Transport": "0.5.7"
+        },
+        "compile": {
+          "lib/net8.0/Elastic.Clients.Elasticsearch.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Elastic.Clients.Elasticsearch.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Elastic.Transport/0.5.7": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Elastic.Transport.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Elastic.Transport.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -3268,6 +3297,53 @@
         "lib/net8.0/Confluent.Kafka.xml",
         "lib/netstandard2.0/Confluent.Kafka.dll",
         "lib/netstandard2.0/Confluent.Kafka.xml"
+      ]
+    },
+    "Elastic.Clients.Elasticsearch/8.17.1": {
+      "sha512": "H1TI5dMB/si8GzoEy17sgjzr8frO+nURIjfgoHFg3AOGugbvPwm4FzCNLk+R++vdPOmsQ3wS0NZPH3VufP4HcQ==",
+      "type": "package",
+      "path": "elastic.clients.elasticsearch/8.17.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "elastic.clients.elasticsearch.8.17.1.nupkg.sha512",
+        "elastic.clients.elasticsearch.nuspec",
+        "lib/net462/Elastic.Clients.Elasticsearch.dll",
+        "lib/net462/Elastic.Clients.Elasticsearch.xml",
+        "lib/net8.0/Elastic.Clients.Elasticsearch.dll",
+        "lib/net8.0/Elastic.Clients.Elasticsearch.xml",
+        "lib/netstandard2.0/Elastic.Clients.Elasticsearch.dll",
+        "lib/netstandard2.0/Elastic.Clients.Elasticsearch.xml",
+        "lib/netstandard2.1/Elastic.Clients.Elasticsearch.dll",
+        "lib/netstandard2.1/Elastic.Clients.Elasticsearch.xml",
+        "nuget-icon.png"
+      ]
+    },
+    "Elastic.Transport/0.5.7": {
+      "sha512": "0VQhS6RauOqydF1bUs7nqpk9u8X2Sa2O7djiioD5b/jWf/cX6S7GcmlWzqvm2j1a+np1Q79B2SwEFOI2zMkcbw==",
+      "type": "package",
+      "path": "elastic.transport/0.5.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "elastic.transport.0.5.7.nupkg.sha512",
+        "elastic.transport.nuspec",
+        "lib/net462/Elastic.Transport.dll",
+        "lib/net462/Elastic.Transport.pdb",
+        "lib/net462/Elastic.Transport.xml",
+        "lib/net8.0/Elastic.Transport.dll",
+        "lib/net8.0/Elastic.Transport.pdb",
+        "lib/net8.0/Elastic.Transport.xml",
+        "lib/netstandard2.0/Elastic.Transport.dll",
+        "lib/netstandard2.0/Elastic.Transport.pdb",
+        "lib/netstandard2.0/Elastic.Transport.xml",
+        "lib/netstandard2.1/Elastic.Transport.dll",
+        "lib/netstandard2.1/Elastic.Transport.pdb",
+        "lib/netstandard2.1/Elastic.Transport.xml",
+        "license.txt",
+        "nuget-icon.png"
       ]
     },
     "Humanizer.Core/2.14.1": {
@@ -9251,6 +9327,7 @@
       "AspNetCoreRateLimit.Redis >= 2.0.0",
       "CloudinaryDotNet >= 1.27.4",
       "Confluent.Kafka >= 2.8.0",
+      "Elastic.Clients.Elasticsearch >= 8.17.1",
       "Microsoft.AspNetCore.Authentication.Google >= 8.0.2",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.0",
       "Microsoft.AspNetCore.Identity >= 2.2.0",
@@ -9325,6 +9402,10 @@
           "Confluent.Kafka": {
             "target": "Package",
             "version": "[2.8.0, )"
+          },
+          "Elastic.Clients.Elasticsearch": {
+            "target": "Package",
+            "version": "[8.17.1, )"
           },
           "Microsoft.AspNetCore.Authentication.Google": {
             "target": "Package",

@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using E_Learning.Common;
 
 namespace E_Learning.Entity
 {
@@ -22,19 +21,19 @@ namespace E_Learning.Entity
         public int Duration { get; set; }
 
         [Column("level")]
-        public Level Level { get; set; }
+        public string Level { get; set; }
 
         [Column("language")]
         public string Language { get; set; }
 
-        [Column("point", TypeName = "decimal(18, 2)")]
-        public decimal Point { get; set; }
+        [Column("price", TypeName = "decimal(18, 2)")]
+        public decimal Price { get; set; }
 
         [Column("created_at")]
         public DateTime CreatedAt { get; set; }
 
         [Column("updated_at")]
-        public DateTime UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
         [ForeignKey("Author")]
         [Column("user_id")]

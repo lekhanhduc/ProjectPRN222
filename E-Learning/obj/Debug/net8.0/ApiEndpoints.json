@@ -2,7 +2,7 @@
   {
     "ContainingType": "E_Learning.Controllers.AuthController",
     "Method": "SigIn",
-    "RelativePath": "api/Auth/sign-in",
+    "RelativePath": "api/v1/auth/sign-in",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -15,7 +15,63 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "E_Learning.Models.Response.ResponseData\u00601[[E_Learning.Models.Response.SignInResponse, E-Learning, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "E_Learning.Models.Response.ApiResponse\u00601[[E_Learning.Models.Response.SignInResponse, E-Learning, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "E_Learning.Controllers.CoursesController",
+    "Method": "CreateCourse",
+    "RelativePath": "api/v1/courses",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Title",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Duration",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Language",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CourseLevel",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Price",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Thumbnail",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "E_Learning.Models.Response.ApiResponse\u00601[[E_Learning.Dto.Response.CourseCreationResponse, E-Learning, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -28,14 +84,14 @@
   {
     "ContainingType": "E_Learning.Controllers.CoursesController",
     "Method": "FetchAll",
-    "RelativePath": "api/Courses/fetch-all",
+    "RelativePath": "api/v1/courses/fetch-all",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "E_Learning.Models.Response.ResponseData\u00601[[System.Collections.Generic.IEnumerable\u00601[[E_Learning.Models.Response.CourseResponse, E-Learning, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "E_Learning.Models.Response.ApiResponse\u00601[[System.Collections.Generic.IEnumerable\u00601[[E_Learning.Models.Response.CourseResponse, E-Learning, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -48,7 +104,7 @@
   {
     "ContainingType": "E_Learning.Controllers.RolesController",
     "Method": "CreateRole",
-    "RelativePath": "api/Roles/create-role",
+    "RelativePath": "api/v1/roles/create-role",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -61,33 +117,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "E_Learning.Models.Response.ResponseData\u00601[[E_Learning.Entity.Role, E-Learning, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "E_Learning.Controllers.UsersController",
-    "Method": "CreateUser",
-    "RelativePath": "api/Users/create",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "E_Learning.Models.Request.UserCreationRequest",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "E_Learning.Models.Response.ResponseData\u00601[[E_Learning.Models.Response.UserCreationResponse, E-Learning, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "E_Learning.Models.Response.ApiResponse\u00601[[E_Learning.Entity.Role, E-Learning, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -100,14 +130,40 @@
   {
     "ContainingType": "E_Learning.Controllers.UsersController",
     "Method": "FetchAllUser",
-    "RelativePath": "api/Users/find-all",
+    "RelativePath": "api/v1/users",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "E_Learning.Models.Response.ResponseData\u00601[[System.Collections.Generic.IEnumerable\u00601[[E_Learning.Models.Response.UserResponse, E-Learning, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "E_Learning.Models.Response.ApiResponse\u00601[[System.Collections.Generic.IEnumerable\u00601[[E_Learning.Models.Response.UserResponse, E-Learning, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "E_Learning.Controllers.UsersController",
+    "Method": "CreateUser",
+    "RelativePath": "api/v1/users",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "E_Learning.Models.Request.UserCreationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "E_Learning.Models.Response.ApiResponse\u00601[[E_Learning.Models.Response.UserCreationResponse, E-Learning, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -120,7 +176,7 @@
   {
     "ContainingType": "E_Learning.Controllers.UsersController",
     "Method": "Verification",
-    "RelativePath": "api/Users/verification",
+    "RelativePath": "api/v1/users/verification",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -138,7 +194,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "E_Learning.Models.Response.ResponseData\u00601[[E_Learning.Dto.Response.VerificationResponse, E-Learning, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "E_Learning.Models.Response.ApiResponse\u00601[[E_Learning.Dto.Response.VerificationResponse, E-Learning, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

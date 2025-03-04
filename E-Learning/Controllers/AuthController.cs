@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace E_Learning.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/auth")]
     [ApiController]
     public class AuthController : ControllerBase
     {
@@ -20,15 +20,15 @@ namespace E_Learning.Controllers
 
         [HttpPost("sign-in")]
         [AllowAnonymous]
-        public async Task<ResponseData<SignInResponse>> SigIn([FromBody] SignInRequest request)
+        public async Task<ApiResponse<SignInResponse>> SigIn([FromBody] SignInRequest request)
         {
             var result = await authenticationService.SignIn(request);
 
-            return new ResponseData<SignInResponse>
+            return new ApiResponse<SignInResponse>
             {
                 code = 200,
                 message = "SignIn Successfully",
-                data = result
+                result = result
             };
         }
     }

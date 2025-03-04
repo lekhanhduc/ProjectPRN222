@@ -414,3 +414,5 @@ D:\PRN222\ProjectFinal\E-Learning\obj\Debug\net8.0\staticwebassets.upToDateCheck
 D:\PRN222\ProjectFinal\E-Learning\obj\Debug\net8.0\E-Learning.csproj.Up2Date
 D:\PRN222\ProjectFinal\E-Learning\obj\Debug\net8.0\E-Learning.genruntimeconfig.cache
 D:\PRN222\ProjectFinal\E-Learning\obj\Debug\net8.0\ref\E-Learning.dll
+D:\PRN222\ProjectFinal\E-Learning\bin\Debug\net8.0\Elastic.Clients.Elasticsearch.dll
+D:\PRN222\ProjectFinal\E-Learning\bin\Debug\net8.0\Elastic.Transport.dll

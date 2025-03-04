@@ -64,7 +64,7 @@ namespace E_Learning.Servies.Impl
 
             logger.LogInformation("User created successfully with email: {Email}", request.Email);
             var otp = GenerateOtp.Generate();
-            var verificationLink = $"https://localhost:7207/api/users/verification?email={user.Email}&otp={otp}";
+            var verificationLink = $"https://localhost:7207/api/v1/users/verification?email={user.Email}&otp={otp}";
 
             redisService.SaveOtp(user.Email, otp, TimeSpan.FromMinutes(5));
 

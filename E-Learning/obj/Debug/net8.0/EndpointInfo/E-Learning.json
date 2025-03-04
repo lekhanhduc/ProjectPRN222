@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Auth/sign-in": {
+    "/api/v1/auth/sign-in": {
       "post": {
         "tags": [
           "Auth"
@@ -35,17 +35,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/SignInResponseResponseData"
+                  "$ref": "#/components/schemas/SignInResponseApiResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SignInResponseResponseData"
+                  "$ref": "#/components/schemas/SignInResponseApiResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SignInResponseResponseData"
+                  "$ref": "#/components/schemas/SignInResponseApiResponse"
                 }
               }
             }
@@ -53,7 +53,94 @@
         }
       }
     },
-    "/api/Courses/fetch-all": {
+    "/api/v1/courses": {
+      "post": {
+        "tags": [
+          "Courses"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Title": {
+                    "type": "string"
+                  },
+                  "Description": {
+                    "type": "string"
+                  },
+                  "Duration": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Language": {
+                    "type": "string"
+                  },
+                  "CourseLevel": {
+                    "type": "string"
+                  },
+                  "Price": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "Thumbnail": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "Title": {
+                  "style": "form"
+                },
+                "Description": {
+                  "style": "form"
+                },
+                "Duration": {
+                  "style": "form"
+                },
+                "Language": {
+                  "style": "form"
+                },
+                "CourseLevel": {
+                  "style": "form"
+                },
+                "Price": {
+                  "style": "form"
+                },
+                "Thumbnail": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CourseCreationResponseApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CourseCreationResponseApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CourseCreationResponseApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/courses/fetch-all": {
       "get": {
         "tags": [
           "Courses"
@@ -64,17 +151,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/CourseResponseIEnumerableResponseData"
+                  "$ref": "#/components/schemas/CourseResponseIEnumerableApiResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CourseResponseIEnumerableResponseData"
+                  "$ref": "#/components/schemas/CourseResponseIEnumerableApiResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CourseResponseIEnumerableResponseData"
+                  "$ref": "#/components/schemas/CourseResponseIEnumerableApiResponse"
                 }
               }
             }
@@ -82,7 +169,7 @@
         }
       }
     },
-    "/api/Roles/create-role": {
+    "/api/v1/roles/create-role": {
       "post": {
         "tags": [
           "Roles"
@@ -112,17 +199,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/RoleResponseData"
+                  "$ref": "#/components/schemas/RoleApiResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RoleResponseData"
+                  "$ref": "#/components/schemas/RoleApiResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RoleResponseData"
+                  "$ref": "#/components/schemas/RoleApiResponse"
                 }
               }
             }
@@ -130,7 +217,7 @@
         }
       }
     },
-    "/api/Users/find-all": {
+    "/api/v1/users": {
       "get": {
         "tags": [
           "Users"
@@ -141,25 +228,23 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserResponseIEnumerableResponseData"
+                  "$ref": "#/components/schemas/UserResponseIEnumerableApiResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserResponseIEnumerableResponseData"
+                  "$ref": "#/components/schemas/UserResponseIEnumerableApiResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserResponseIEnumerableResponseData"
+                  "$ref": "#/components/schemas/UserResponseIEnumerableApiResponse"
                 }
               }
             }
           }
         }
-      }
-    },
-    "/api/Users/create": {
+      },
       "post": {
         "tags": [
           "Users"
@@ -189,17 +274,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserCreationResponseResponseData"
+                  "$ref": "#/components/schemas/UserCreationResponseApiResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserCreationResponseResponseData"
+                  "$ref": "#/components/schemas/UserCreationResponseApiResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserCreationResponseResponseData"
+                  "$ref": "#/components/schemas/UserCreationResponseApiResponse"
                 }
               }
             }
@@ -207,7 +292,7 @@
         }
       }
     },
-    "/api/Users/verification": {
+    "/api/v1/users/verification": {
       "get": {
         "tags": [
           "Users"
@@ -234,17 +319,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/VerificationResponseResponseData"
+                  "$ref": "#/components/schemas/VerificationResponseApiResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/VerificationResponseResponseData"
+                  "$ref": "#/components/schemas/VerificationResponseApiResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/VerificationResponseResponseData"
+                  "$ref": "#/components/schemas/VerificationResponseApiResponse"
                 }
               }
             }
@@ -255,9 +340,181 @@
   },
   "components": {
     "schemas": {
+      "Certificate": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "issueDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "course": {
+            "$ref": "#/components/schemas/Course"
+          },
+          "courseId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "certificateUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Chapter": {
+        "required": [
+          "chapterName"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "course": {
+            "$ref": "#/components/schemas/Course"
+          },
+          "courseId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "lessons": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Lesson"
+            },
+            "nullable": true
+          },
+          "chapterName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Comment": {
+        "required": [
+          "content"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "content": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "post": {
+            "$ref": "#/components/schemas/Post"
+          },
+          "postId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "parentComment": {
+            "$ref": "#/components/schemas/Comment"
+          },
+          "parentCommentId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "replies": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Comment"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Course": {
         "required": [
-          "id",
           "title"
         ],
         "type": "object",
@@ -265,6 +522,19 @@
           "id": {
             "type": "integer",
             "format": "int64"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
           },
           "title": {
             "minLength": 1,
@@ -283,13 +553,14 @@
             "format": "int32"
           },
           "level": {
-            "$ref": "#/components/schemas/Level"
+            "type": "string",
+            "nullable": true
           },
           "language": {
             "type": "string",
             "nullable": true
           },
-          "point": {
+          "price": {
             "type": "number",
             "format": "double"
           },
@@ -297,12 +568,99 @@
             "type": "string",
             "format": "date-time"
           },
-          "updatedAt": {
-            "type": "string",
-            "format": "date-time"
+          "authorId": {
+            "type": "integer",
+            "format": "int64"
           },
           "author": {
             "$ref": "#/components/schemas/User"
+          },
+          "reviews": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Review"
+            },
+            "nullable": true
+          },
+          "certificates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Certificate"
+            },
+            "nullable": true
+          },
+          "enrollments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Enrollment"
+            },
+            "nullable": true
+          },
+          "favorites": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Favorite"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CourseCreationResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "author": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "duration": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "language": {
+            "type": "string",
+            "nullable": true
+          },
+          "courseLevel": {
+            "type": "string",
+            "nullable": true
+          },
+          "thumbnail": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CourseCreationResponseApiResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/CourseCreationResponse"
           }
         },
         "additionalProperties": false
@@ -327,20 +685,25 @@
             "format": "int32"
           },
           "level": {
-            "$ref": "#/components/schemas/Level"
+            "type": "string",
+            "nullable": true
           },
           "language": {
             "type": "string",
             "nullable": true
           },
-          "point": {
+          "price": {
             "type": "number",
             "format": "double"
+          },
+          "thumbnail": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "CourseResponseIEnumerableResponseData": {
+      "CourseResponseIEnumerableApiResponse": {
         "type": "object",
         "properties": {
           "code": {
@@ -351,7 +714,7 @@
             "type": "string",
             "nullable": true
           },
-          "data": {
+          "result": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/CourseResponse"
@@ -361,15 +724,344 @@
         },
         "additionalProperties": false
       },
-      "Level": {
-        "enum": [
-          0,
-          1,
-          2,
-          3
+      "Enrollment": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "course": {
+            "$ref": "#/components/schemas/Course"
+          },
+          "courseId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "purchased": {
+            "type": "boolean"
+          },
+          "isComplete": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Favorite": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "course": {
+            "$ref": "#/components/schemas/Course"
+          },
+          "courseId": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Lesson": {
+        "required": [
+          "lessonName"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lessonName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "chapter": {
+            "$ref": "#/components/schemas/Chapter"
+          },
+          "chapterId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "contentType": {
+            "type": "string",
+            "nullable": true
+          },
+          "videoUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "reviews": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Review"
+            },
+            "nullable": true
+          },
+          "lessonProgresses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LessonProgress"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LessonProgress": {
+        "required": [
+          "completed"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "lesson": {
+            "$ref": "#/components/schemas/Lesson"
+          },
+          "lessonId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "completed": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Post": {
+        "required": [
+          "content",
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "title": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "content": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "image": {
+            "type": "string",
+            "nullable": true
+          },
+          "likeCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "comments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Comment"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Review": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "content": {
+            "type": "string",
+            "nullable": true
+          },
+          "rating": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "parentReview": {
+            "$ref": "#/components/schemas/Review"
+          },
+          "parentReviewId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "replies": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Review"
+            },
+            "nullable": true
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "course": {
+            "$ref": "#/components/schemas/Course"
+          },
+          "courseId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "chapter": {
+            "$ref": "#/components/schemas/Chapter"
+          },
+          "chapterId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "lesson": {
+            "$ref": "#/components/schemas/Lesson"
+          },
+          "lessonId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       },
       "Role": {
         "required": [
@@ -380,6 +1072,22 @@
           "id": {
             "type": "integer",
             "format": "int32"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
           },
           "name": {
             "maxLength": 50,
@@ -400,7 +1108,7 @@
         },
         "additionalProperties": false
       },
-      "RoleResponseData": {
+      "RoleApiResponse": {
         "type": "object",
         "properties": {
           "code": {
@@ -411,7 +1119,7 @@
             "type": "string",
             "nullable": true
           },
-          "data": {
+          "result": {
             "$ref": "#/components/schemas/Role"
           }
         },
@@ -449,7 +1157,7 @@
         },
         "additionalProperties": false
       },
-      "SignInResponseResponseData": {
+      "SignInResponseApiResponse": {
         "type": "object",
         "properties": {
           "code": {
@@ -460,7 +1168,7 @@
             "type": "string",
             "nullable": true
           },
-          "data": {
+          "result": {
             "$ref": "#/components/schemas/SignInResponse"
           }
         },
@@ -480,6 +1188,22 @@
             "type": "integer",
             "format": "int64"
           },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
           "email": {
             "minLength": 1,
             "type": "string",
@@ -497,13 +1221,13 @@
             "minLength": 1,
             "type": "string"
           },
-          "refreshToken": {
-            "type": "string",
-            "nullable": true
-          },
           "lastName": {
             "minLength": 1,
             "type": "string"
+          },
+          "refreshToken": {
+            "type": "string",
+            "nullable": true
           },
           "avatar": {
             "type": "string",
@@ -520,6 +1244,13 @@
           "enabled": {
             "type": "boolean"
           },
+          "roleId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "role": {
+            "$ref": "#/components/schemas/Role"
+          },
           "courses": {
             "type": "array",
             "items": {
@@ -527,12 +1258,47 @@
             },
             "nullable": true
           },
-          "roleId": {
-            "type": "integer",
-            "format": "int32"
+          "reviews": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Review"
+            },
+            "nullable": true
           },
-          "role": {
-            "$ref": "#/components/schemas/Role"
+          "enrollments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Enrollment"
+            },
+            "nullable": true
+          },
+          "favorites": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Favorite"
+            },
+            "nullable": true
+          },
+          "certificates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Certificate"
+            },
+            "nullable": true
+          },
+          "comments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Comment"
+            },
+            "nullable": true
+          },
+          "lessonProgresses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LessonProgress"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -589,7 +1355,7 @@
         },
         "additionalProperties": false
       },
-      "UserCreationResponseResponseData": {
+      "UserCreationResponseApiResponse": {
         "type": "object",
         "properties": {
           "code": {
@@ -600,7 +1366,7 @@
             "type": "string",
             "nullable": true
           },
-          "data": {
+          "result": {
             "$ref": "#/components/schemas/UserCreationResponse"
           }
         },
@@ -628,7 +1394,7 @@
         },
         "additionalProperties": false
       },
-      "UserResponseIEnumerableResponseData": {
+      "UserResponseIEnumerableApiResponse": {
         "type": "object",
         "properties": {
           "code": {
@@ -639,7 +1405,7 @@
             "type": "string",
             "nullable": true
           },
-          "data": {
+          "result": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/UserResponse"
@@ -653,7 +1419,7 @@
         "type": "object",
         "additionalProperties": false
       },
-      "VerificationResponseResponseData": {
+      "VerificationResponseApiResponse": {
         "type": "object",
         "properties": {
           "code": {
@@ -664,7 +1430,7 @@
             "type": "string",
             "nullable": true
           },
-          "data": {
+          "result": {
             "$ref": "#/components/schemas/VerificationResponse"
           }
         },
