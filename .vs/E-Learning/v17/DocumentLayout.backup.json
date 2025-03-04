@@ -26,6 +26,10 @@
   "WorkspaceRootPath": "E:\\FPT_UNIVERSITY\\PRN222\\E-Learning\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|e:\\fpt_university\\prn222\\e-learning\\e-learning\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|e:\\fpt_university\\prn222\\e-learning\\e-learning\\servies\\impl\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\servies\\impl\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -46,6 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
 <<<<<<< HEAD
           "SelectedChildIndex": 2,
           "Children": [
@@ -75,10 +80,26 @@
               "WhenOpened": "2025-03-04T16:17:23.884Z",
 =======
           "SelectedChildIndex": 1,
+=======
+          "SelectedChildIndex": 0,
+>>>>>>> 5b0e28e (project-course-prn)
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "E:\\FPT_UNIVERSITY\\PRN222\\E-Learning\\E-Learning\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "E-Learning\\Controllers\\UsersController.cs",
+              "ToolTip": "E:\\FPT_UNIVERSITY\\PRN222\\E-Learning\\E-Learning\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "E-Learning\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T00:41:38.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "SignInResponse.cs",
               "DocumentMoniker": "E:\\FPT_UNIVERSITY\\PRN222\\E-Learning\\E-Learning\\Dto\\Response\\SignInResponse.cs",
               "RelativeDocumentMoniker": "E-Learning\\Dto\\Response\\SignInResponse.cs",
@@ -86,6 +107,7 @@
               "RelativeToolTip": "E-Learning\\Dto\\Response\\SignInResponse.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2025-02-26T08:20:58.007Z",
 >>>>>>> 459715e (project-course 26.02.2025)
               "EditorCaption": ""
@@ -103,12 +125,19 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-04T16:10:54.835Z",
 =======
+=======
+              "WhenOpened": "2025-02-26T08:20:58.007Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+>>>>>>> 5b0e28e (project-course-prn)
               "Title": "AuthenticationService.cs",
               "DocumentMoniker": "E:\\FPT_UNIVERSITY\\PRN222\\E-Learning\\E-Learning\\Servies\\Impl\\AuthenticationService.cs",
               "RelativeDocumentMoniker": "E-Learning\\Servies\\Impl\\AuthenticationService.cs",
               "ToolTip": "E:\\FPT_UNIVERSITY\\PRN222\\E-Learning\\E-Learning\\Servies\\Impl\\AuthenticationService.cs",
               "RelativeToolTip": "E-Learning\\Servies\\Impl\\AuthenticationService.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAvwFcAAABGAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAvwFcAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-26T08:20:31.464Z",
 >>>>>>> 459715e (project-course 26.02.2025)
@@ -116,6 +145,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
 <<<<<<< HEAD
               "DocumentIndex": 1,
               "Title": "CourseService.cs",
@@ -141,6 +171,9 @@
               "WhenOpened": "2025-03-04T15:28:25.606Z",
 =======
               "DocumentIndex": 2,
+=======
+              "DocumentIndex": 3,
+>>>>>>> 5b0e28e (project-course-prn)
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\FPT_UNIVERSITY\\PRN222\\E-Learning\\E-Learning\\Program.cs",
               "RelativeDocumentMoniker": "E-Learning\\Program.cs",
@@ -148,9 +181,13 @@
               "RelativeToolTip": "E-Learning\\Program.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2025-02-26T08:18:55.159Z",
 >>>>>>> 459715e (project-course 26.02.2025)
               "EditorCaption": ""
+=======
+              "WhenOpened": "2025-02-26T08:18:55.159Z"
+>>>>>>> 5b0e28e (project-course-prn)
             }
           ]
         }

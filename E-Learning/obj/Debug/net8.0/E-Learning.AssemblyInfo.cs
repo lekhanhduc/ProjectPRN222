@@ -16,6 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1ef2cd07ed09954ec15f23c646cec07492c54211")]
 =======
 <<<<<<< Updated upstream:E-Learning/obj/Debug/net8.0/E-Learning.AssemblyInfo.cs
@@ -24,6 +25,9 @@ using System.Reflection;
 =======
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d6df06754af63472ce058bf8231e9952eb43346")]
 >>>>>>> 459715e (project-course 26.02.2025)
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+459715ec8776a2ae8f95e0777685c3a9a8b74195")]
+>>>>>>> 5b0e28e (project-course-prn)
 [assembly: System.Reflection.AssemblyProductAttribute("E-Learning")]
 [assembly: System.Reflection.AssemblyTitleAttribute("E-Learning")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
