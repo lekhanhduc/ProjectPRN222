@@ -14,56 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("E-Learning")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1ef2cd07ed09954ec15f23c646cec07492c54211")]
-=======
-<<<<<<< Updated upstream:E-Learning/obj/Debug/net8.0/E-Learning.AssemblyInfo.cs
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bc8eeac1aaf031ed8a67d884a29f35907c05cf7b")]
->>>>>>> cb40f82 (project-course 26.02.2025)
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d6df06754af63472ce058bf8231e9952eb43346")]
->>>>>>> 459715e (project-course 26.02.2025)
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+459715ec8776a2ae8f95e0777685c3a9a8b74195")]
->>>>>>> 5b0e28e (project-course-prn)
-=======
-=======
->>>>>>> 1187ebf (fix conflict when rebase)
-=======
->>>>>>> 1725848 (fix conflict when rebase)
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+459715ec8776a2ae8f95e0777685c3a9a8b74195")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3b550ed6ba3976d449551c5b45b7a57e18f3f35")]
->>>>>>> 152b225 (Created database with Code first)
-<<<<<<< HEAD
->>>>>>> 340b601 (fix conflict when rebase)
-=======
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+152b2251cb90593ac8a19d3ad41b6f9b0197c63d")]
->>>>>>> 1ef2cd0 (04.03.2025)
-<<<<<<< HEAD
->>>>>>> 1187ebf (fix conflict when rebase)
-=======
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+152b2251cb90593ac8a19d3ad41b6f9b0197c63d")]
-=======
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3b550ed6ba3976d449551c5b45b7a57e18f3f35")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c3d8adab4129cab563109740b8328534428e9a3")]
->>>>>>> 4e8ce80 (fix confict)
->>>>>>> 97e1fb0 (fix bug)
->>>>>>> 65bd4e6 (fix conflict when rebase)
->>>>>>> 1725848 (fix conflict when rebase)
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+172584821e6a540d794a606a118fd9e7c74669a5")]
->>>>>>> 0210022 (khanhduc 04.03.2025)
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ebb38f1a391a9eca9ed50a0ffb88593d749aa86")]
 [assembly: System.Reflection.AssemblyProductAttribute("E-Learning")]
 [assembly: System.Reflection.AssemblyTitleAttribute("E-Learning")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

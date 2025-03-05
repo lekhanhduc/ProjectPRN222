@@ -1,0 +1,64 @@
+﻿# Bỏ qua thư mục build
+bin/
+obj/
+out/
+
+# Bỏ qua file user-specific
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Bỏ qua file log
+logs/
+*.log
+
+# Bỏ qua file cache và lock
+*.cache
+*.lock
+*.pid
+*.seed
+*.coveragerc
+
+# Bỏ qua file cấu hình môi trường
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.json
+
+# Bỏ qua launch settings
+Properties/launchSettings.json
+
+# Bỏ qua package lock files
+project.lock.json
+project.assets.json
+
+# Bỏ qua thư mục publish
+publish/
+wwwroot/
+
+# Bỏ qua các file của Resharper, Rider, VS Code
+*.vs/
+*.ncrunch*
+*.localhistory
+.idea/
+*.vsix
+.vsconfig
+
+# Bỏ qua file build
+bin/
+obj/
+out/
+
+# Bỏ qua file cache của Visual Studio
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Bỏ qua project lock và cache
+project.lock.json
+project.assets.json
+*.cache
+
