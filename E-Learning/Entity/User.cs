@@ -53,13 +53,6 @@ namespace E_Learning.Entity
         public ICollection<Certificate> Certificates { get; set; } = new List<Certificate>();
         public ICollection<Comment> Comments { get; set; } = new List<Comment>();
         public ICollection<LessonProgress> LessonProgresses { get; set; } = new List<LessonProgress>();
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> 340b601 (fix conflict when rebase)
-=======
-
->>>>>>> 1187ebf (fix conflict when rebase)
     }
 }

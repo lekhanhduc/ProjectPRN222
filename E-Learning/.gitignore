@@ -51,6 +51,17 @@ bin/
 obj/
 out/
 
+# Bỏ qua các file Debug/Release
+*.dll
+*.exe
+*.pdb
+*.ilk
+*.obj
+*.idb
+*.lib
+*.nupkg
+*.ntvs*
+
 # Bỏ qua file cache của Visual Studio
 *.suo
 *.user

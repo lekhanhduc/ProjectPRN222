@@ -668,6 +668,10 @@
       "CourseResponse": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
           "title": {
             "type": "string",
             "nullable": true
@@ -1108,11 +1112,7 @@
         },
         "additionalProperties": false
       },
-<<<<<<< HEAD
       "RoleApiResponse": {
-=======
-      "RoleResponseData": {
->>>>>>> 459715e (project-course 26.02.2025)
         "type": "object",
         "properties": {
           "code": {
