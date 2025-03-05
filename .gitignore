@@ -1,17 +1,17 @@
-# B? qua th? m?c build
+
 bin/
 obj/
 out/
 .vs/
 
-# B? qua các th? m?c build c? th? c?a d? án
+
 E-Learning/bin/
 E-Learning/obj/
 E-Learning/out/
 E-Learning/vs/
 
 
-# B? qua các file user-specific
+
 .vscode/
 .idea/
 *.suo
@@ -19,34 +19,33 @@ E-Learning/vs/
 *.userosscache
 *.sln.docstates
 
-# B? qua file log
+
 logs/
 *.log
 
-# B? qua file cache và lock
+
 *.cache
 *.lock
 *.pid
 *.seed
 *.coveragerc
 
-# B? qua file c?u hình môi tr??ng (nh?y c?m)
+
 appsettings.Development.json
 appsettings.Local.json
 appsettings.*.json
 
-# B? qua launch settings
+
 Properties/launchSettings.json
 
-# B? qua package lock files c?a .NET
 project.lock.json
 project.assets.json
 
-# B? qua th? m?c publish
+
 publish/
 wwwroot/
 
-# B? qua các file c?a Resharper, Rider, VS Code
+
 *.vs/
 *.ncrunch*
 *.localhistory
@@ -65,12 +64,12 @@ wwwroot/
 *.nupkg
 *.ntvs*
 
-# B? qua cache c?a Visual Studio
+
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
 
-# B? qua project lock và cache
+
 project.lock.json
 project.assets.json
