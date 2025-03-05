@@ -3,7 +3,12 @@ bin/
 obj/
 out/
 
-# Bỏ qua file user-specific
+# Bỏ qua các thư mục build cụ thể của dự án
+E-Learning/bin/
+E-Learning/obj/
+E-Learning/out/
+
+# Bỏ qua các file user-specific
 .vscode/
 .idea/
 *.suo
@@ -22,7 +27,7 @@ logs/
 *.seed
 *.coveragerc
 
-# Bỏ qua file cấu hình môi trường
+# Bỏ qua file cấu hình môi trường (nhạy cảm)
 appsettings.Development.json
 appsettings.Local.json
 appsettings.*.json
@@ -30,7 +35,7 @@ appsettings.*.json
 # Bỏ qua launch settings
 Properties/launchSettings.json
 
-# Bỏ qua package lock files
+# Bỏ qua package lock files của .NET
 project.lock.json
 project.assets.json
 
@@ -46,12 +51,7 @@ wwwroot/
 *.vsix
 .vsconfig
 
-# Bỏ qua file build
-bin/
-obj/
-out/
-
-# Bỏ qua các file Debug/Release
+# Bỏ qua các file build
 *.dll
 *.exe
 *.pdb
@@ -62,7 +62,7 @@ out/
 *.nupkg
 *.ntvs*
 
-# Bỏ qua file cache của Visual Studio
+# Bỏ qua cache của Visual Studio
 *.suo
 *.user
 *.userosscache
@@ -71,5 +71,3 @@ out/
 # Bỏ qua project lock và cache
 project.lock.json
 project.assets.json
-*.cache
-
