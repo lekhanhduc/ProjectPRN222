@@ -6,7 +6,8 @@ namespace E_Learning.Servies
 {
     public interface ICourseService
     {
-        Task<IEnumerable<CourseResponse>> FindAll();
+        Task<PageResponse<CourseResponse>> FindAll(int page, int size);
         Task<CourseCreationResponse> CreateCourse(CourseCreationRequest request);
+        Task<CourseResponse> FindById(int id);
     }
 }

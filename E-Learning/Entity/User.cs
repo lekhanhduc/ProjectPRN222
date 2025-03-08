@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using E_Learning.Common;
 
 namespace E_Learning.Entity
 {
@@ -24,6 +25,15 @@ namespace E_Learning.Entity
         [Required]
         [Column("last_name")]
         public string LastName { get; set; }
+
+        [Column("gender", TypeName = "nvarchar(50)")]
+        public Gender? Gender { get; set; }
+
+        [Column("phone")]
+        public string? Phone { get; set; }
+
+        [Column("address")]
+        public string? Address { get; set; }
 
         [Column("refresh_token")]
         public string? RefreshToken { get; set; }

@@ -1,4 +1,6 @@
-﻿using E_Learning.Models.Request;
+﻿using E_Learning.Dto.Request;
+using E_Learning.Dto.Response;
+using E_Learning.Models.Request;
 using E_Learning.Models.Response;
 
 namespace E_Learning.Servies
@@ -6,5 +8,6 @@ namespace E_Learning.Servies
     public interface IAuthenticationService
     {
         Task<SignInResponse> SignIn(SignInRequest request);
+        Task<IntrospectResponse> VerifyToken(IntrospectRequest request);
     }
 }

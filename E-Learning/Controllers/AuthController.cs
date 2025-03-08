@@ -1,4 +1,6 @@
-﻿using E_Learning.Models.Request;
+﻿using E_Learning.Dto.Request;
+using E_Learning.Dto.Response;
+using E_Learning.Models.Request;
 using E_Learning.Models.Response;
 using E_Learning.Servies;
 using Microsoft.AspNetCore.Authorization;
@@ -31,5 +33,18 @@ namespace E_Learning.Controllers
                 result = result
             };
         }
+
+        [HttpPost("introspect")]
+        public async Task<ApiResponse<IntrospectResponse>> Introspect([FromBody] IntrospectRequest request)
+        {
+            var result = await authenticationService.VerifyToken(request);
+            return new ApiResponse<IntrospectResponse>
+            {
+                code = 200,
+                message = "Introspect Successfully",
+                result = result
+            };
+        }
+
     }
 }

@@ -1,12 +1,16 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Text;
 using E_Learning.Data;
+using E_Learning.Dto.Request;
+using E_Learning.Dto.Response;
 using E_Learning.Entity;
 using E_Learning.Middlewares;
 using E_Learning.Models.Request;
 using E_Learning.Models.Response;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 namespace E_Learning.Servies.Impl
 {
@@ -18,13 +22,15 @@ namespace E_Learning.Servies.Impl
         private readonly IJwtService jwtService;
         private readonly PasswordHasher<User> passwordHasher;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IConfiguration _configuration;
 
         public AuthenticationService(
             ELearningDbContext context,
             IConfiguration configuration,
             ILogger<AuthenticationService> logger,
             IJwtService jwtService,
-            IHttpContextAccessor httpContextAccessor)
+            IHttpContextAccessor httpContextAccessor,
+            IConfiguration _configuration)
         {
             this.context = context;
             this.configuration = configuration;
@@ -32,6 +38,7 @@ namespace E_Learning.Servies.Impl
             this.jwtService = jwtService;
             this.passwordHasher = new PasswordHasher<User>();
             this._httpContextAccessor = httpContextAccessor;
+            this._configuration = _configuration;
         }
 
         public async Task<SignInResponse> SignIn(SignInRequest request)
@@ -92,6 +99,43 @@ namespace E_Learning.Servies.Impl
             return new SignInResponse(accessToken, refreshToken, user.Role.Name);
         }
 
+        public async Task<IntrospectResponse> VerifyToken(IntrospectRequest request)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]);
+
+            try
+            {
+                var validationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = true,
+                    ValidIssuer = _configuration["Jwt:Issuer"],
+                    ValidateAudience = true,
+                    ValidAudience = _configuration["Jwt:Audience"],
+                    ValidateLifetime = true,
+                    ClockSkew = TimeSpan.Zero
+                };
+
+                var principal = tokenHandler.ValidateToken(request.Token, validationParameters, out _);
+                var roleClaim = principal?.FindFirst("Authorities")?.Value;
+
+                return new IntrospectResponse
+                {
+                    Valid = true,
+                    Scope = roleClaim ?? "Unknown"
+                };
+            }
+            catch
+            {
+                return new IntrospectResponse
+                {
+                    Valid = false,
+                    Scope = "Invalid"
+                };
+            }
+        }
 
     }
 }

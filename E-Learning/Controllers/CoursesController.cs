@@ -34,16 +34,37 @@ namespace E_Learning.Controllers
             };
         }
 
-        [HttpGet("fetch-all")]
-        public async Task<ApiResponse<IEnumerable<CourseResponse>>> FetchAll()
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<ApiResponse<PageResponse<CourseResponse>>> FetchAll
+            (
+            [FromQuery] int? page,
+            [FromQuery] int? size
+            )
         {
-            var result = await courseService.FindAll();
+            int currentPage = page ?? 1;
+            int pageSize = size ?? 4;
 
-            return new ApiResponse<IEnumerable<CourseResponse>>(
+            var result = await courseService.FindAll(currentPage, pageSize);
+
+            return new ApiResponse<PageResponse<CourseResponse>>(
                 code: 200,
                 message: "Fetch All Courses",
                 result: result
                 );
+        }
+
+        [HttpGet("{id}")]
+        [AllowAnonymous]
+        public async Task<ApiResponse<CourseResponse>> FetchById(int id)
+        {
+            var result = await courseService.FindById(id);
+            return new ApiResponse<CourseResponse>
+            {
+                code = 200,
+                message = "Fetch Course By Id",
+                result = result
+            };
         }
 
     }

@@ -8,7 +8,7 @@ namespace E_Learning.Servies
     {
         Task<IEnumerable<UserResponse>> FindAll();
         Task<UserCreationResponse> CreateUser(UserCreationRequest request);
-
         Task<VerificationResponse> Verification(string email, string otp);
+        Task<UserResponse> MyInfo();
     }
 }

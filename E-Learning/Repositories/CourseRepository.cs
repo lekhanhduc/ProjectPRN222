@@ -24,11 +24,29 @@ namespace E_Learning.Repositories
         }
 
 
-        public async Task<IEnumerable<Course>> FindAll()
+        public async Task<List<Course>> FindAll(int page, int size)
+        {
+            if (page < 1)
+            {
+                page = 1;
+            }
+            return await _context.Courses
+                .Include(course => course.Author)
+                .Skip((page - 1) * size)
+                .Take(size)
+                .ToListAsync();
+        }
+
+        public async Task<int> CountAllCourses()
+        {
+            return await _context.Courses.CountAsync();
+        }
+
+        public async Task<Course> FindById(int id)
         {
             return await _context.Courses
                 .Include(course => course.Author)
-                .ToListAsync();
+                .FirstOrDefaultAsync(course => course.Id == id);
         }
 
     }

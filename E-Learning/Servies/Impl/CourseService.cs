@@ -23,10 +23,6 @@ namespace E_Learning.Servies.Impl
 
         public async Task<CourseCreationResponse> CreateCourse(CourseCreationRequest request)
         {
-            if (request == null)
-            {
-                throw new AppException(ErrorCode.ACCOUNT_LOCKED);
-            }
             var userId = httpContextAccessor.HttpContext?.User.Claims.FirstOrDefault(c => c.Type == "userId");
             if (userId == null)
             {
@@ -63,12 +59,15 @@ namespace E_Learning.Servies.Impl
             };
         }
 
-        public async Task<IEnumerable<CourseResponse>> FindAll()
+        public async Task<PageResponse<CourseResponse>> FindAll(int page, int size)
         {
-            var courses = await courseRepository.FindAll();
+            var courses = await courseRepository.FindAll(page, size);
+            var totalElements = await courseRepository.CountAllCourses();
+            var totalPages = (int)Math.Ceiling((double)totalElements / size);
 
             var result = courses.Select(course => new CourseResponse
             {
+                Id = course.Id,
                 Title = course.Title,
                 Author = course.Author.Name,
                 Description = course.Description,
@@ -77,9 +76,39 @@ namespace E_Learning.Servies.Impl
                 Level = course.Level,
                 Price = course.Price,
                 Thumbnail = course.Thumbnail
-            });
+            }).ToList();
 
-            return result;
+            return new PageResponse<CourseResponse>
+            {
+                CurrentPage = page,
+                PageSize = size,
+                TotalPages = totalPages,
+                TotalElemets = totalElements,
+                Data = result
+            };
+        }
+
+        public async Task<CourseResponse> FindById(int id)
+        {
+            var course = await courseRepository.FindById(id);
+            if (course == null)
+            {
+                throw new AppException(ErrorCode.COURSE_NOT_EXISTED);
+            }
+
+            return new CourseResponse
+            {
+                Id = course.Id,
+                Title = course.Title,
+                Author = course.Author.Name,
+                Description = course.Description,
+                Duration = course.Duration,
+                Language = course.Language,
+                Level = course.Level,
+                Price = course.Price,
+                Thumbnail = course.Thumbnail
+            };
+
         }
     }
 }

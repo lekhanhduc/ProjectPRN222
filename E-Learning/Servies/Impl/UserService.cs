@@ -19,12 +19,14 @@ namespace E_Learning.Servies.Impl
         private readonly ILogger<UserService> logger;
         private readonly IEmailService emailService;
         private readonly IRedisService redisService;
+        private readonly IHttpContextAccessor httpContextAccessor;
 
         public UserService(UserRepository userRepository,
                            RoleRepository roleRepository,
                            ILogger<UserService> logger,
                            IEmailService emailService,
-                           IRedisService redisService)
+                           IRedisService redisService,
+                           IHttpContextAccessor httpContextAccessor)
         {
             this.userRepository = userRepository;
             this.roleRepository = roleRepository;
@@ -32,6 +34,7 @@ namespace E_Learning.Servies.Impl
             this.logger = logger;
             this.emailService = emailService;
             this.redisService = redisService;
+            this.httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<UserCreationResponse> CreateUser(UserCreationRequest request)
@@ -93,6 +96,30 @@ namespace E_Learning.Servies.Impl
             });
 
             return result;
+        }
+
+        public async Task<UserResponse> MyInfo()
+        {
+            var userId = httpContextAccessor.HttpContext?.User.Claims.FirstOrDefault(c => c.Type == "userId");
+            if (userId == null)
+            {
+                throw new AppException(ErrorCode.USER_NOT_EXISTED);
+            }
+
+            var user = await userRepository.FindUserById(int.Parse(userId.Value));
+            if (user == null)
+            {
+                throw new AppException(ErrorCode.USER_NOT_EXISTED);
+            }
+
+            return new UserResponse
+            {
+                Email = user.Email,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Name = user.Name,
+            };
+
         }
 
         public async Task<VerificationResponse> Verification(string email, string otp)

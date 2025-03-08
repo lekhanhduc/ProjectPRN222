@@ -59,5 +59,17 @@ namespace E_Learning.Controllers
             );
         }
 
+        [Authorize]
+        [HttpGet("my-info")]
+        public async Task<ApiResponse<UserResponse>> MyInfo()
+        {
+            var result = await userService.MyInfo();
+            return new ApiResponse<UserResponse>(
+                code: 200,
+                message: "My Info",
+                result: result
+            );
+        }
+
     }
 }
