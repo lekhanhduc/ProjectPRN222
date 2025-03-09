@@ -15,7 +15,7 @@ namespace E_Learning
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+            builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
             var allowedOrigins = new[] { "http://localhost:3000", "http://localhost:5173" };
 
 
@@ -25,6 +25,7 @@ namespace E_Learning
                      options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
                  });
 
+            builder.Services.AddPayOS(builder.Configuration);
             builder.Services.AddHttpClient<GoogleAuthClient>(client =>
             {
                 client.BaseAddress = new Uri("https://oauth2.googleapis.com/");
@@ -55,6 +56,8 @@ namespace E_Learning
             builder.Services.AddSingleton<IRedisService, RedisService>();
             builder.Services.AddScoped<CourseRepository>();
             builder.Services.AddScoped<UserRepository>();
+            builder.Services.AddScoped<EnrollmentRepository>();
+            builder.Services.AddScoped<PaymentRepository>();
             builder.Services.AddScoped<RoleRepository>();
             builder.Services.AddDbContext<ELearningDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
