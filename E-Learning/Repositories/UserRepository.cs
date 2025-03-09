@@ -22,9 +22,17 @@ namespace E_Learning.Repositories
                                  .FirstOrDefaultAsync(u => u.Email == email);
         }
 
-        public async Task<IEnumerable<User>> GetAllUsers()
+        public async Task<List<User>> GetAllUsers(int page, int size)
         {
-            return await _context.Users.ToListAsync();
+            return await _context.Users
+                .Skip((page - 1) * size)
+                .Take(size)
+                .ToListAsync();
+        }
+
+        public async Task<int> GetTotalUsersCount()
+        {
+            return await _context.Users.CountAsync();  
         }
 
         public async Task CreateUserAsync(User user)

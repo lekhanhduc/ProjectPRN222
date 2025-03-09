@@ -22,11 +22,18 @@ namespace E_Learning.Controllers
 
         [Authorize(Roles = "USER")]
         [HttpGet]
-        public async Task<ApiResponse<IEnumerable<UserResponse>>> FetchAllUser()
+        public async Task<ApiResponse<PageResponse<UserResponse>>> FetchAllUser
+            (
+                [FromBody] int? page,
+                [FromBody] int? size
+            )
         {
-            var users = await userService.FindAll();
+            int currentPage = page ?? 1;
+            int pageSize = size ?? 4;
 
-            return new ApiResponse<IEnumerable<UserResponse>>(
+            var users = await userService.FindAll(currentPage, pageSize);
+
+            return new ApiResponse<PageResponse<UserResponse>>(
                 code: 200,
                 message: "Fetch All Users",
                 result: users

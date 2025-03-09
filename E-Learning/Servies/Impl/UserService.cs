@@ -83,9 +83,10 @@ namespace E_Learning.Servies.Impl
                 );
         }
 
-        public async Task<IEnumerable<UserResponse>> FindAll()
+        public async Task<PageResponse<UserResponse>> FindAll(int page, int size)
         {
-            var users = await userRepository.GetAllUsers();
+            var users = await userRepository.GetAllUsers(page, size);
+            var totalItems = await userRepository.GetTotalUsersCount();
 
             var result = users.Select(user => new UserResponse
             {
@@ -93,9 +94,18 @@ namespace E_Learning.Servies.Impl
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Name = user.Name,
-            });
+            }).ToList();
 
-            return result;
+            var totalPages = (int)Math.Ceiling((double)totalItems / size);
+
+            return new PageResponse<UserResponse>
+            {
+                CurrentPage = page,
+                PageSize = size,
+                TotalPages = totalPages,
+                TotalElemets = totalItems,
+                Data = result
+            };
         }
 
         public async Task<UserResponse> MyInfo()

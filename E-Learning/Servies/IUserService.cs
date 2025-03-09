@@ -6,7 +6,7 @@ namespace E_Learning.Servies
 {
     public interface IUserService
     {
-        Task<IEnumerable<UserResponse>> FindAll();
+        Task<PageResponse<UserResponse>> FindAll(int pgae, int size);
         Task<UserCreationResponse> CreateUser(UserCreationRequest request);
         Task<VerificationResponse> Verification(string email, string otp);
         Task<UserResponse> MyInfo();
