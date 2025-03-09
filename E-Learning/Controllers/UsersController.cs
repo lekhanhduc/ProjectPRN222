@@ -20,12 +20,12 @@ namespace E_Learning.Controllers
         }
 
 
-        [Authorize(Roles = "USER")]
+        [Authorize(Roles = "ADMIN")]
         [HttpGet]
         public async Task<ApiResponse<PageResponse<UserResponse>>> FetchAllUser
             (
-                [FromBody] int? page,
-                [FromBody] int? size
+                [FromQuery] int? page,
+                [FromQuery] int? size
             )
         {
             int currentPage = page ?? 1;
