@@ -9,11 +9,14 @@ namespace E_Learning.Entity
     {
         [ForeignKey("UserId")]
         public User? User { get; set; }
-        public long UserId { get; set; }
+        public long? UserId { get; set; }
 
         [ForeignKey("CourseId")]
         public virtual Course? Course { get; set; }
         public long? CourseId { get; set; }
+
+        [Column("order_code")]
+        public long? OrderCode { get; set; }
 
         [Required]
         [Column("payment_method", TypeName = "nvarchar(50)")]
