@@ -1,0 +1,92 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\FPT_UNIVERSITY\\PRN222\\ProjectPRN222\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|e:\\fpt_university\\prn222\\projectprn222\\e-learning\\repositories\\courserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\repositories\\courserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|e:\\fpt_university\\prn222\\projectprn222\\e-learning\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|e:\\fpt_university\\prn222\\projectprn222\\e-learning\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|e:\\fpt_university\\prn222\\projectprn222\\e-learning\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82C64163-C4E7-40FD-9A9C-680E1453E5E7}|E-Learning\\E-Learning.csproj|solutionrelative:e-learning\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CourseRepository.cs",
+              "DocumentMoniker": "E:\\FPT_UNIVERSITY\\PRN222\\ProjectPRN222\\E-Learning\\Repositories\\CourseRepository.cs",
+              "RelativeDocumentMoniker": "E-Learning\\Repositories\\CourseRepository.cs",
+              "ToolTip": "E:\\FPT_UNIVERSITY\\PRN222\\ProjectPRN222\\E-Learning\\Repositories\\CourseRepository.cs",
+              "RelativeToolTip": "E-Learning\\Repositories\\CourseRepository.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAA3wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T09:13:46.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "E:\\FPT_UNIVERSITY\\PRN222\\ProjectPRN222\\E-Learning\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "E-Learning\\Repositories\\UserRepository.cs",
+              "ToolTip": "E:\\FPT_UNIVERSITY\\PRN222\\ProjectPRN222\\E-Learning\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "E-Learning\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T09:13:40.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\FPT_UNIVERSITY\\PRN222\\ProjectPRN222\\E-Learning\\appsettings.json",
+              "RelativeDocumentMoniker": "E-Learning\\appsettings.json",
+              "ToolTip": "E:\\FPT_UNIVERSITY\\PRN222\\ProjectPRN222\\E-Learning\\appsettings.json",
+              "RelativeToolTip": "E-Learning\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-09T08:52:58.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\FPT_UNIVERSITY\\PRN222\\ProjectPRN222\\E-Learning\\Program.cs",
+              "RelativeDocumentMoniker": "E-Learning\\Program.cs",
+              "ToolTip": "E:\\FPT_UNIVERSITY\\PRN222\\ProjectPRN222\\E-Learning\\Program.cs",
+              "RelativeToolTip": "E-Learning\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T08:49:12.488Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
