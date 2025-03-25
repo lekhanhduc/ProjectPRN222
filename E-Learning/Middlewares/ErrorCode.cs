@@ -23,5 +23,6 @@ namespace E_Learning.Middlewares
         public static readonly ErrorCode ACCOUNT_LOCKED = new ErrorCode(401, "Your account has been locked", HttpStatusCode.Unauthorized);
         public static readonly ErrorCode CREATE_COURSE_ERRORR = new ErrorCode(400, "Create course error", HttpStatusCode.BadRequest);
         public static readonly ErrorCode COURSE_NOT_EXISTED = new ErrorCode(400, "Course not existed", HttpStatusCode.NotFound);
+        public static readonly ErrorCode FAVORITE_EXISTED = new ErrorCode(400, "Favorite existed", HttpStatusCode.BadRequest);
     }
 }

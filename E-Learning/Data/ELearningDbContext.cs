@@ -17,6 +17,8 @@ namespace E_Learning.Data
         public DbSet<Chapter> Chapters { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Enrollment> Enrollments { get; set; }
+
+        public DbSet<Favorite> Favorites { get; set; }
         public DbSet<LessonProgress> LessonProgresses { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Post> Posts { get; set; }
