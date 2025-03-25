@@ -54,8 +54,10 @@ namespace E_Learning
             builder.Services.AddScoped<IRoleService, RoleService>();
             builder.Services.AddSingleton<IEmailService, EmailService>();
             builder.Services.AddSingleton<IRedisService, RedisService>();
+            builder.Services.AddScoped<IFavoriteService, FavoriteService>();
             builder.Services.AddScoped<CourseRepository>();
             builder.Services.AddScoped<UserRepository>();
+            builder.Services.AddScoped<FavoriteRepository>();
             builder.Services.AddScoped<EnrollmentRepository>();
             builder.Services.AddScoped<PaymentRepository>();
             builder.Services.AddScoped<RoleRepository>();
