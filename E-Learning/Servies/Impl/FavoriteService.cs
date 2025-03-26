@@ -87,7 +87,6 @@ namespace E_Learning.Servies.Impl
             };
         }
 
-
         public async Task RemoveFavorite(long favorite)
         {
             var userId = httpContextAccessor.HttpContext?.User.Claims.FirstOrDefault(c => c.Type == "userId");

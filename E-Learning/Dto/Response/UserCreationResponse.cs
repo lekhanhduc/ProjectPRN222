@@ -5,7 +5,7 @@
         public String Email { get; set; }
         public String FirstName { get; set; }
         public String LastName { get; set; }
-        public DateOnly Dob { get; set; }
+        public DateOnly? Dob { get; set; }
         public string UserType { get; set; }
 
         public UserCreationResponse() { }

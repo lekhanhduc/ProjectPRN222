@@ -47,6 +47,9 @@ namespace E_Learning.Entity
         [Column("dob")]
         public DateOnly Dob { get; set; }
 
+        [Column("level")]
+        public string? Level { get; set; }
+
         [Column("enabled")]
         public bool Enabled { get; set; } = true;
 
