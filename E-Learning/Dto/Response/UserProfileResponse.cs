@@ -9,8 +9,10 @@ namespace E_Learning.Dto.Response
         public string LastName { get; set; }
         public Gender? Gender { get; set; }
         public string? Phone { get; set; }
-        public DateTime? Dob { get; set; }
+        public DateOnly? Dob { get; set; }
         public string? Address { get; set; }
-        public Level? Level { get; set; }
+
+        public string? Description { get; set; }
+        public string? Level { get; set; }
     }
 }
