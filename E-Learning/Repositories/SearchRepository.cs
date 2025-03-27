@@ -28,14 +28,28 @@ namespace E_Learning.Repositories
                     {
                         Infer.Field<CourseElasticSearch>(x => x.Title),
                         Infer.Field<CourseElasticSearch>(x => x.AuthorName),
-                        Infer.Field<CourseElasticSearch>(x => x.Price),
                         Infer.Field<CourseElasticSearch>(x => x.Language),
                         Infer.Field<CourseElasticSearch>(x => x.Description),
                     },
-                    Fuzziness = new Fuzziness("AUTO")
+                    Fuzziness = new Fuzziness("AUTO"),
                 }
                 ));
             }
+
+            //if (!string.IsNullOrWhiteSpace(keyword))
+            //{
+            //    queries.Add(Query.QueryString(new QueryStringQuery
+            //    {
+            //        Query = $"*{keyword.ToLower()}*", // giống like '%keyword%'
+            //        Fields = new Field[]
+            //        {
+            //Infer.Field<CourseElasticSearch>(x => x.Title),
+            //Infer.Field<CourseElasticSearch>(x => x.AuthorName),
+            //Infer.Field<CourseElasticSearch>(x => x.Description)
+            //        },
+            //        DefaultOperator = Operator.And
+            //    }));
+            //}
 
             if (!string.IsNullOrWhiteSpace(level))
             {

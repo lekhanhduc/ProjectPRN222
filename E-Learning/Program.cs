@@ -61,6 +61,7 @@ namespace E_Learning
             builder.Services.AddScoped<FavoriteRepository>();
             builder.Services.AddScoped<EnrollmentRepository>();
             builder.Services.AddScoped<PaymentRepository>();
+            builder.Services.AddScoped<SearchRepository>();
             builder.Services.AddScoped<RoleRepository>();
             builder.Services.AddDbContext<ELearningDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -73,12 +74,11 @@ namespace E_Learning
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
+            app.UseRouting();
             app.UseCors("_myAllowSpecificOrigins");
             app.UseMiddleware<ExceptionMiddleware>();
 
             app.UseHttpsRedirection();
-            app.UseRouting();
 
             app.UseAuthentication();
             app.UseAuthorization();

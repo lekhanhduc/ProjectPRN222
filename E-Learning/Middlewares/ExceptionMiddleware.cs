@@ -66,17 +66,22 @@ namespace E_Learning.Middlewares
         private Task HandleUnauthorizedResponse(HttpContext context)
         {
             var response = context.Response;
-            response.ContentType = "application/json";
-
-            var errorResponse = new ErrorResponse
+            if (!response.HasStarted)
             {
-                Code = (int)HttpStatusCode.Unauthorized,
-                Message = "Unauthorized - Access is denied due to invalid credentials.",
-                Url = context.Request.Path,
-                Timestamp = DateTime.Now
-            };
+                response.ContentType = "application/json";
+                response.StatusCode = (int)HttpStatusCode.Unauthorized;
 
-            return response.WriteAsync(JsonConvert.SerializeObject(errorResponse));
+                var errorResponse = new ErrorResponse
+                {
+                    Code = (int)HttpStatusCode.Unauthorized,
+                    Message = "Unauthorized - Access is denied due to invalid credentials.",
+                    Url = context.Request.Path,
+                    Timestamp = DateTime.Now
+                };
+
+                return response.WriteAsync(JsonConvert.SerializeObject(errorResponse));
+            }
+            return Task.CompletedTask;
         }
 
         private Task HandleForbiddenResponse(HttpContext context)
@@ -99,7 +104,7 @@ namespace E_Learning.Middlewares
         {
             var response = context.Response;
             response.ContentType = "application/json";
-            response.StatusCode = (int)HttpStatusCode.InternalServerError;
+            response.StatusCode = (int)HttpStatusCode.Unauthorized;
 
             var errorResponse = new ErrorResponse
             {

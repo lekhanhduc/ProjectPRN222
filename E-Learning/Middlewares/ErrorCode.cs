@@ -24,5 +24,7 @@ namespace E_Learning.Middlewares
         public static readonly ErrorCode CREATE_COURSE_ERRORR = new ErrorCode(400, "Create course error", HttpStatusCode.BadRequest);
         public static readonly ErrorCode COURSE_NOT_EXISTED = new ErrorCode(400, "Course not existed", HttpStatusCode.NotFound);
         public static readonly ErrorCode FAVORITE_EXISTED = new ErrorCode(400, "Favorite existed", HttpStatusCode.BadRequest);
+        public static readonly ErrorCode REFRESH_TOKEN_MISSING = new ErrorCode(400, "Refresh token missing", HttpStatusCode.BadRequest);
+        public static readonly ErrorCode INVALID_REFRESH_TOKEN = new ErrorCode(400, "Invalid Refresh Token", HttpStatusCode.BadRequest);
     }
 }

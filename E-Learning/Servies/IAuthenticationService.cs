@@ -9,5 +9,10 @@ namespace E_Learning.Servies
     {
         Task<SignInResponse> SignIn(SignInRequest request);
         Task<IntrospectResponse> VerifyToken(IntrospectRequest request);
+
+        Task<IntrospectResponse> VerifyRefreshToken(string token);
+
+        Task<SignInResponse> RefreshToken();
+        Task SignOut();
     }
 }
