@@ -46,5 +46,28 @@ namespace E_Learning.Controllers
             };
         }
 
+        [HttpPost("refresh-token")]
+        public async Task<ApiResponse<SignInResponse>> RefreshToken()
+        {
+            var result = await authenticationService.RefreshToken();
+            return new ApiResponse<SignInResponse>
+            {
+                code = 200,
+                message = "Refresh Token Successfully",
+                result = result
+            };
+        }
+
+        [HttpPost("logout")]
+        public async Task<ApiResponse<object>> Logout()
+        {
+            await authenticationService.SignOut();
+            return new ApiResponse<object>
+            {
+                code = 200,
+                message = "Sign Out Successfully"
+            };
+        }
+
     }
 }

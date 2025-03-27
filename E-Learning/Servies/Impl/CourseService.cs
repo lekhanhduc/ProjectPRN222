@@ -4,6 +4,7 @@ using E_Learning.Entity;
 using E_Learning.Middlewares;
 using E_Learning.Models.Response;
 using E_Learning.Repositories;
+using Elastic.Clients.Elasticsearch;
 
 namespace E_Learning.Servies.Impl
 {
@@ -13,12 +14,17 @@ namespace E_Learning.Servies.Impl
         private readonly CourseRepository courseRepository;
         private readonly CloudinaryService cloudinaryService;
         private readonly IHttpContextAccessor httpContextAccessor;
+        private readonly ElasticsearchClient elasticsearchClient;
+        private readonly SearchRepository searchRepository;
 
-        public CourseService(CourseRepository courseRepository, CloudinaryService cloudinaryService, IHttpContextAccessor httpContextAccessor)
+        public CourseService(CourseRepository courseRepository, CloudinaryService cloudinaryService, IHttpContextAccessor httpContextAccessor, 
+            ElasticsearchClient elasticsearchClient, SearchRepository searchRepository)
         {
             this.courseRepository = courseRepository;
             this.cloudinaryService = cloudinaryService;
             this.httpContextAccessor = httpContextAccessor;
+            this.elasticsearchClient = elasticsearchClient;
+            this.searchRepository = searchRepository;
         }
 
         public async Task<CourseCreationResponse> CreateCourse(CourseCreationRequest request)
@@ -44,19 +50,45 @@ namespace E_Learning.Servies.Impl
             course.Thumbnail = imageUrl;
             await courseRepository.CreateCourse(course);
 
-            return new CourseCreationResponse
+            // Đồng bộ dữ liệu lên Elasticsearch
+            var courseElastic = new CourseElasticSearch
             {
                 Id = course.Id,
-                Author = course.Author.Name,
                 Title = course.Title,
                 Description = course.Description,
-                Duration = course.Duration,
-                Language = course.Language,
-                CourseLevel = course.Level,
                 Thumbnail = course.Thumbnail,
-                Price = course.Price,
-
+                Duration = course.Duration,
+                Level = course.Level,
+                Language = course.Language,
+                Price = (double)course.Price,
+                AuthorName = course.Author?.Name 
             };
+            var indexResponse = await elasticsearchClient.IndexAsync(courseElastic, idx => idx
+                .Index("courses") 
+                .Id(course.Id.ToString()) 
+            );
+
+            if (!indexResponse.IsValidResponse)
+            {
+                Console.WriteLine($"Failed to index course in Elasticsearch: {indexResponse.DebugInformation}");
+                throw new Exception($"Failed to index course in Elasticsearch: {indexResponse.DebugInformation}");
+            } else
+            {
+                Console.WriteLine($"Indexed course {course.Id} in Elasticsearch");
+            }
+                return new CourseCreationResponse
+                {
+                    Id = course.Id,
+                    Author = course.Author.Name,
+                    Title = course.Title,
+                    Description = course.Description,
+                    Duration = course.Duration,
+                    Language = course.Language,
+                    CourseLevel = course.Level,
+                    Thumbnail = course.Thumbnail,
+                    Price = course.Price,
+
+                };
         }
 
         public async Task<PageResponse<CourseResponse>> FindAll(int page, int size)
@@ -108,7 +140,11 @@ namespace E_Learning.Servies.Impl
                 Price = course.Price,
                 Thumbnail = course.Thumbnail
             };
+        }
 
+        public async Task<PageResponse<CourseResponse>> GetAllWithSearchElastic(int page, int size, string? keyword, string? level, double? minPrice, double? maxPrice)
+        {
+            return await searchRepository.GetAllWithSearch(page, size, keyword, level, minPrice, maxPrice);
         }
     }
 }

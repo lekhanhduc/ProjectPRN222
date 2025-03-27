@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Net;
+using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
@@ -34,6 +35,17 @@ namespace E_Learning.Configuration
                     ClockSkew = TimeSpan.Zero,
                     RoleClaimType = "Authorities"
                 };
+            options.Events = new JwtBearerEvents
+            {
+                OnAuthenticationFailed = context =>
+                {
+                    if (context.Exception is SecurityTokenExpiredException)
+                    {
+                        context.Response.StatusCode = (int)HttpStatusCode.Unauthorized; // Trả về 401 nếu token hết hạn
+                    }
+                    return Task.CompletedTask;
+                }
+            };
             });
         }
     }

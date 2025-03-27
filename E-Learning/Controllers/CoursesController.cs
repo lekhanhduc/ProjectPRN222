@@ -67,5 +67,26 @@ namespace E_Learning.Controllers
             };
         }
 
+        [HttpGet("search")]
+        public async Task<ApiResponse<PageResponse<CourseResponse>>> SearchCourses
+            (
+            [FromQuery] int? page,
+            [FromQuery] int? size,
+            [FromQuery] string? keyword,
+            [FromQuery] string? level,
+            [FromQuery] double? minPrice,
+            [FromQuery] double? maxPrice
+            )
+        {
+            int currentPage = page ?? 1;
+            int pageSize = size ?? 6;
+            var result = await courseService.GetAllWithSearchElastic(currentPage, pageSize, keyword, level, minPrice, maxPrice);
+            return new ApiResponse<PageResponse<CourseResponse>>(
+                code: 200,
+                message: "Search Courses",
+                result: result
+                );
+        }
+
     }
 }

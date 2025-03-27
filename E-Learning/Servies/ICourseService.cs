@@ -9,5 +9,6 @@ namespace E_Learning.Servies
         Task<PageResponse<CourseResponse>> FindAll(int page, int size);
         Task<CourseCreationResponse> CreateCourse(CourseCreationRequest request);
         Task<CourseResponse> FindById(int id);
+        Task<PageResponse<CourseResponse>> GetAllWithSearchElastic(int page, int size, string? keyword, string? level, double? minPrice, double? maxPrice);
     }
 }

@@ -10,6 +10,7 @@
                 {
                     policy.WithOrigins(allowedOrigins)
                           .AllowAnyHeader()
+                          .AllowCredentials()
                           .AllowAnyMethod();
                 });
             });
