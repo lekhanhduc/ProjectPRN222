@@ -34,6 +34,20 @@ namespace E_Learning.Controllers
             };
         }
 
+        [HttpPost("outbound/authentication")]
+        [AllowAnonymous]
+        public async Task<ApiResponse<SignInResponse>> SigInGoogle([FromQuery] string code)
+        {
+            var result = await authenticationService.SignInWithGoogle(code);
+
+            return new ApiResponse<SignInResponse>
+            {
+                code = 200,
+                message = "SignIn Google Successfully",
+                result = result
+            };
+        }
+
         [HttpPost("introspect")]
         public async Task<ApiResponse<IntrospectResponse>> Introspect([FromBody] IntrospectRequest request)
         {

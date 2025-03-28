@@ -49,7 +49,7 @@ namespace E_Learning.Repositories
             _logger.LogInformation("User updated successfully: {Email}", user.Email);
         }
 
-        public async Task<User?> FindUserById(int id)
+        public async Task<User?> FindUserById(long id)
         {
             return await _context.Users
                                  .FirstOrDefaultAsync(u => u.Id == id);

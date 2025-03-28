@@ -1,5 +1,6 @@
 ﻿using E_Learning.Dto.Request;
 using E_Learning.Dto.Response;
+using E_Learning.Dto.Response.E_Learning.Dto.Response;
 using E_Learning.Models.Response;
 using E_Learning.Servies;
 using Microsoft.AspNetCore.Authorization;
@@ -20,7 +21,7 @@ namespace E_Learning.Controllers
         }
 
 
-        [Authorize]
+        [Authorize(Roles = "TEACHER")]
         [HttpPost]
         public async Task<ApiResponse<CourseCreationResponse>> CreateCourse([FromForm] CourseCreationRequest request)
         {
@@ -86,6 +87,70 @@ namespace E_Learning.Controllers
                 message: "Search Courses",
                 result: result
                 );
+        }
+
+        [Authorize(Roles = "TEACHER")]
+        [HttpGet("teacher")]
+        public async Task<ApiResponse<PageResponse<CourseResponse>>> GetMyCourses(
+                [FromQuery] int page = 1,
+                [FromQuery] int size = 4) 
+        {
+            var result = await courseService.GetCourseByTeacher(page, size);
+
+            return new ApiResponse<PageResponse<CourseResponse>>
+            {
+                code = 200,
+                message = "Get courses by teacher successfully",
+                result = result
+            };
+        }
+
+        [HttpGet("overview/{courseId}")]
+        public async Task<ApiResponse<OverviewCourseResponse>> OverviewCourseDetail(long courseId)
+        {
+            var result = await courseService.OverviewCourseDetail(courseId);
+            return new ApiResponse<OverviewCourseResponse>
+            {
+                code = 200,
+                message = "Get overview course successfully",
+                result = result
+            };
+        }
+
+        [HttpGet("info/{courseId}")]
+        public async Task<ApiResponse<CourseChapterResponse>> GetAllInfoCourse(long courseId)
+        {
+            var result = await courseService.GetAllInfoCourse(courseId);
+            return new ApiResponse<CourseChapterResponse>
+            {
+                code = 200,
+                message = "Get all info course successfully",
+                result = result
+            };
+        }
+
+        [HttpGet("purchase/{courseId}")]
+        public async Task<ApiResponse<CoursePurchaseResponse>> CheckPurchase(long courseId)
+        {
+            var result = await courseService.CheckPurchase(courseId);
+            return new ApiResponse<CoursePurchaseResponse>
+            {
+                code = 200,
+                message = "Check purchase successfully",
+                result = result
+            };
+        }
+
+        [HttpGet("info-detail/{courseId}")]
+        public async Task<ApiResponse<CourseChapterResponse>> InfoCourse(long courseId)
+        {
+            var result = await courseService.InfoCourse(courseId);
+            return new ApiResponse<CourseChapterResponse>
+            {
+                code = 200,
+                message = "Get info course successfully",
+                result = result
+            };
         }
 
     }

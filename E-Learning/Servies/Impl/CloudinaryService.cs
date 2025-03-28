@@ -29,5 +29,25 @@ namespace E_Learning.Servies.Impl
             var uploadResult = await _cloudinary.UploadAsync(uploadParams);
             return uploadResult.SecureUrl.AbsoluteUri;
         }
+
+        public async Task<string> UploadVideoChunked(Stream file, string fileName, string folderName)
+        {
+            var uploadParams = new RawUploadParams
+            {
+                File = new FileDescription(fileName, file),
+                Folder = folderName
+            };
+
+            var uploadResult = await _cloudinary.UploadLargeAsync(uploadParams, bufferSize: 6_000_000);
+
+            if (uploadResult.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                return uploadResult.SecureUrl.ToString();
+            }
+
+            throw new Exception($"Upload thất bại: {uploadResult.Error?.Message}");
+        }
+
+
     }
 }

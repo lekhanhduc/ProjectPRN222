@@ -1,6 +1,7 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using E_Learning.Common;
 using E_Learning.Data;
 using E_Learning.Dto.Request;
 using E_Learning.Dto.Response;
@@ -8,6 +9,7 @@ using E_Learning.Entity;
 using E_Learning.Middlewares;
 using E_Learning.Models.Request;
 using E_Learning.Models.Response;
+using E_Learning.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -23,6 +25,9 @@ namespace E_Learning.Servies.Impl
         private readonly PasswordHasher<User> passwordHasher;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IConfiguration _configuration;
+        private readonly GoogleAuthClient googleAuthClient;
+        private readonly GoogleUserInfoClient googleUserInfoClient;
+        private readonly RoleRepository roleRepository;
 
         public AuthenticationService(
             ELearningDbContext context,
@@ -30,7 +35,10 @@ namespace E_Learning.Servies.Impl
             ILogger<AuthenticationService> logger,
             IJwtService jwtService,
             IHttpContextAccessor httpContextAccessor,
-            IConfiguration _configuration)
+            IConfiguration _configuration,
+            GoogleUserInfoClient googleUserInfoClient,
+            GoogleAuthClient googleAuthClient,
+            RoleRepository roleRepository)
         {
             this.context = context;
             this.configuration = configuration;
@@ -39,6 +47,9 @@ namespace E_Learning.Servies.Impl
             this.passwordHasher = new PasswordHasher<User>();
             this._httpContextAccessor = httpContextAccessor;
             this._configuration = _configuration;
+            this.googleUserInfoClient = googleUserInfoClient;
+            this.googleAuthClient = googleAuthClient;
+            this.roleRepository = roleRepository;
         }
 
         public async Task<SignInResponse> SignIn(SignInRequest request)
@@ -274,5 +285,67 @@ namespace E_Learning.Servies.Impl
             logger.LogInformation("SignOut success.");
         }
 
+        public async Task<SignInResponse> SignInWithGoogle(string code)
+        {
+            
+            var token = await googleAuthClient.ExchangeTokenAsync(code);
+            var userInfo = await googleUserInfoClient.GetUserInfoAsync(token.AccessToken);
+
+            var user =  await context.Users
+                .Include(u => u.Role)
+                .FirstOrDefaultAsync(u => u.Email == userInfo.Email);
+
+            if (user == null)
+            {
+                Role? role = await roleRepository.FindByRoleName(DefinitionRole.USER);
+                if (role == null)
+                {
+                    role = new Role();
+                    role.Name = DefinitionRole.USER;
+                    await roleRepository.CreateRole(role);
+                }
+                user = new User
+                {
+                    Email = userInfo.Email,
+                    FirstName = userInfo.GivenName,
+                    LastName = userInfo.FamilyName,
+                    Name = userInfo.Name,
+                    Avatar = userInfo.Picture,
+                    Enabled = true,
+                    Role = role
+                };
+                context.Users.Add(user);
+                await context.SaveChangesAsync();
+            }
+            var claims = new[]
+    {
+        new Claim("userId", user.Id.ToString()),
+        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+        new Claim("Authorities", user.Role.Name)
+    };
+
+            var accessToken = jwtService.GenerateAccessToken(claims);
+            var refreshToken = jwtService.GenerateRefreshToken(claims);
+            Console.WriteLine(refreshToken);
+
+            var httpContext = _httpContextAccessor?.HttpContext;
+            if (httpContext != null)
+            {
+                httpContext.Response.Cookies.Append("refreshToken", refreshToken, new CookieOptions
+                {
+                    HttpOnly = true,
+                    Secure = false,
+                    SameSite = SameSiteMode.Lax,
+                    Expires = DateTimeOffset.UtcNow.AddDays(14)
+                });
+            }
+
+            user.RefreshToken = refreshToken;
+            await context.SaveChangesAsync();
+
+            logger.LogInformation("SignIn Google success for userId: {UserId}", user.Id);
+
+            return new SignInResponse(accessToken, refreshToken, user.Role.Name);
+        }
     }
 }

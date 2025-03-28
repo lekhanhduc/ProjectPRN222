@@ -39,5 +39,40 @@ namespace E_Learning.Controllers
             };
         }
 
+        [HttpGet("avatar")]
+        public async Task<ApiResponse<string?>> GetAvatar()
+        {
+            var result = await profileService.GetAvatar();
+            return new ApiResponse<string?>
+            {
+                code = 200,
+                message = "Get Avatar Successfully",
+                result = result
+            };
+        }
+
+        [HttpPost("avatar")]
+        public async Task<ApiResponse<string?>> UpdateAvatar([FromForm] UpdateAvatarRequest request)
+        {
+            var result = await profileService.UpdateAvatar(request);
+            return new ApiResponse<string?>
+            {
+                code = 201,
+                message = "Update Avatar Successfully",
+                result = result
+            };
+        }
+
+        [HttpDelete("avatar")]
+        public async Task<ApiResponse<object>> RemoveAvatar()
+        {
+            await profileService.RomoveAvatar();
+            return new ApiResponse<object>
+            {
+                code = 200,
+                message = "Remove Avatar Successfully"
+            };
+        }
+
     }
 }

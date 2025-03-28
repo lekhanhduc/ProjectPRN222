@@ -27,5 +27,6 @@ namespace E_Learning.Entity
         public ICollection<Review> Reviews { get; set; } = new List<Review>();
         public ICollection<LessonProgress> LessonProgresses { get; set; } = new List<LessonProgress>();
 
+
     }
 }

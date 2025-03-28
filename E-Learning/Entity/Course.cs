@@ -35,6 +35,9 @@ namespace E_Learning.Entity
         [Column("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        [Column("quantity")]
+        public int Quantity { get; set; } = 0;
+
         [ForeignKey("Author")]
         [Column("user_id")]
         public long AuthorId { get; set; }
@@ -44,5 +47,7 @@ namespace E_Learning.Entity
         public ICollection<Certificate> Certificates { get; set; } = new List<Certificate>();
         public ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
         public ICollection<Favorite> Favorites { get; set; } = new List<Favorite>();
+        public ICollection<Chapter> Chapters { get; set; } = new List<Chapter>();
+
     }
 }

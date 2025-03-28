@@ -18,5 +18,6 @@ namespace E_Learning.Entity
 
         [Column("description", TypeName = "TEXT")]
         public string? Description { get; set; }
+
     }
 }

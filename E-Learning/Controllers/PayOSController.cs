@@ -4,6 +4,7 @@ using E_Learning.Dto.Response;
 using E_Learning.Entity;
 using E_Learning.Middlewares;
 using E_Learning.Repositories;
+using E_Learning.Servies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Net.payOS;
@@ -19,14 +20,19 @@ namespace E_Learning.Controllers
         private readonly PayOS _payOS;
         private readonly PaymentRepository paymentRepository;
         private readonly EnrollmentRepository enrollmentRepository;
+        private readonly CourseRepository courseRepository;
+        private readonly IEmailService emailService;
         private readonly IHttpContextAccessor httpContextAccessor;
         public PayOSController(PayOS payOS, PaymentRepository paymentRepository, 
-                EnrollmentRepository enrollmentRepository, IHttpContextAccessor httpContextAccessor)
+                EnrollmentRepository enrollmentRepository, IHttpContextAccessor httpContextAccessor,
+                IEmailService emailService, CourseRepository courseRepository)
         {
             _payOS = payOS;
             this.paymentRepository = paymentRepository;
             this.enrollmentRepository = enrollmentRepository;
             this.httpContextAccessor = httpContextAccessor;
+            this.emailService = emailService;
+            this.courseRepository = courseRepository;
         }
 
         [HttpPost("create")]
@@ -91,7 +97,10 @@ namespace E_Learning.Controllers
                         return Ok(new PaymentResponse(-1, "fail", null));
                     }
                     payment.Status = PaymentStatus.SUCCESS;
+
                     Course course = payment.Course;
+                    course.Quantity = course.Quantity + 1;
+
                     User user = payment.User;
                     Enrollment enrollment = new Enrollment
                     {
@@ -103,6 +112,9 @@ namespace E_Learning.Controllers
                     };
 
                     enrollmentRepository.Add(enrollment);
+                    await paymentRepository.UpdatePayment(payment);
+                    await courseRepository.UpdateCourse(course);
+                    await emailService.SendEmailBuyCourse(course.Author.Email, user.Email, course.Title, course.Thumbnail);
 
                     return Ok(new PaymentResponse(0, "Ok", null));
                 }

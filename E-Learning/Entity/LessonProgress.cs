@@ -10,9 +10,11 @@ namespace E_Learning.Entity
         public User User { get; set; }
         public long UserId { get; set; }
 
+
         [ForeignKey("LessonId")]
         public virtual Lesson Lesson { get; set; }
         public long LessonId { get; set; }
+
 
         [Required]
         [Column("completed")]

@@ -11,12 +11,36 @@ namespace E_Learning.Servies.Impl
 
         private readonly UserRepository userRepository;
         private readonly IHttpContextAccessor httpContextAccessor;
+        private readonly CloudinaryService cloudinaryService;
 
-        public ProfileService(UserRepository userRepository, IHttpContextAccessor httpContextAccessor)
+        public ProfileService(UserRepository userRepository, IHttpContextAccessor httpContextAccessor, CloudinaryService cloudinaryService)
         {
             this.userRepository = userRepository;
             this.httpContextAccessor = httpContextAccessor;
+            this.cloudinaryService = cloudinaryService;
         }
+
+        public async Task<string?> GetAvatar()
+        {
+            var userId = httpContextAccessor.HttpContext?.User.Claims
+                .FirstOrDefault(c => c.Type == "userId");
+
+            if (userId == null)
+            {
+                return null;
+            }
+
+            var user = await userRepository.FindUserById(int.Parse(userId.Value));
+
+            if (user == null)
+            {
+                return null;
+            }
+
+            return user.Avatar; 
+        }
+
+
         public async Task<UserProfileResponse> GetUserProfile()
         {
             var userId = httpContextAccessor.HttpContext?.User.Claims.FirstOrDefault(c => c.Type == "userId");
@@ -42,6 +66,43 @@ namespace E_Learning.Servies.Impl
                 Phone = user.Phone,
             };
         }
+
+        public async Task RomoveAvatar()
+        {
+
+            var userId = httpContextAccessor.HttpContext?.User.Claims.FirstOrDefault(c => c.Type == "userId");
+            if (userId == null)
+            {
+                throw new AppException(ErrorCode.USER_NOT_EXISTED);
+            }
+            var user = await userRepository.FindUserById(int.Parse(userId.Value));
+            if (user == null)
+            {
+                throw new AppException(ErrorCode.USER_NOT_EXISTED);
+            }
+            user.Avatar = null;
+            await userRepository.UpdateUserAsync(user);
+        }
+
+        public async Task<string?> UpdateAvatar(UpdateAvatarRequest request)
+        {
+            var userId = httpContextAccessor.HttpContext?.User.Claims.FirstOrDefault(c => c.Type == "userId");
+            if (userId == null)
+            {
+                throw new AppException(ErrorCode.USER_NOT_EXISTED);
+            }
+            var user = await userRepository.FindUserById(int.Parse(userId.Value));
+            if (user == null)
+            {
+                throw new AppException(ErrorCode.USER_NOT_EXISTED);
+            }
+            using var stream = request.File.OpenReadStream();
+            var imageUrl = await cloudinaryService.UploadImageAsync(stream, request.File.Name);
+            user.Avatar = imageUrl;
+            await userRepository.UpdateUserAsync(user);
+            return imageUrl;
+        }
+
         public async Task UpdateUserProfile(UserProfileRequest request)
         {
             var userId = httpContextAccessor.HttpContext?.User.Claims.FirstOrDefault(c => c.Type == "userId");

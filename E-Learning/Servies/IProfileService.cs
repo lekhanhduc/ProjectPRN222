@@ -7,5 +7,8 @@ namespace E_Learning.Servies
     {
         Task<UserProfileResponse> GetUserProfile();
         Task UpdateUserProfile(UserProfileRequest request);
+        Task<string?> GetAvatar();
+        Task<string?> UpdateAvatar(UpdateAvatarRequest request);
+        Task RomoveAvatar();   
     }
 }

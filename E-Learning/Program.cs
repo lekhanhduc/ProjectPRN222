@@ -57,6 +57,11 @@ namespace E_Learning
             builder.Services.AddSingleton<IRedisService, RedisService>();
             builder.Services.AddScoped<IFavoriteService, FavoriteService>();
             builder.Services.AddScoped<IProfileService, ProfileService>();
+            builder.Services.AddScoped<IChapterService, ChapterService>();
+            builder.Services.AddScoped<ILessonService, LessonService>();
+            builder.Services.AddScoped<ILessonProgressService, LessonProgressService>();
+            builder.Services.AddScoped<IEnrollmentService, EnrollmentService>();
+            builder.Services.AddScoped<ICertificationService, CertificateService>();
             builder.Services.AddScoped<CourseRepository>();
             builder.Services.AddScoped<UserRepository>();
             builder.Services.AddScoped<FavoriteRepository>();
@@ -66,6 +71,10 @@ namespace E_Learning
             builder.Services.AddScoped<RoleRepository>();
             builder.Services.AddScoped<IAdminUserService, AdminUserService>();
             builder.Services.AddScoped<IAdminTeacherService, AdminTeacherService>();
+            builder.Services.AddScoped<ChapterRepository>();
+            builder.Services.AddScoped<LessonRepository>();
+            builder.Services.AddScoped<LessonProgressRepository>();
+            builder.Services.AddScoped<CertificateRepository>();
             builder.Services.AddDbContext<ELearningDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 

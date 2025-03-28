@@ -51,6 +51,9 @@ namespace E_Learning.Entity
         [Column("level")]
         public string? Level { get; set; }
 
+        [Column("qr_code")]
+        public string? QrCode { get; set; }
+
         [Column("enabled")]
         public bool Enabled { get; set; } = true;
 

@@ -42,12 +42,43 @@ namespace E_Learning.Repositories
             return await _context.Courses.CountAsync();
         }
 
-        public async Task<Course> FindById(int id)
+        public async Task<Course> FindById(long id)
         {
             return await _context.Courses
                 .Include(course => course.Author)
                 .FirstOrDefaultAsync(course => course.Id == id);
         }
 
+        public async Task<Course> FindByIdAndChapter(long id)
+        {
+            return await _context.Courses
+                .Include(course => course.Author)
+                .Include(course => course.Chapters)
+                .ThenInclude(chapter => chapter.Lessons) 
+                .FirstOrDefaultAsync(course => course.Id == id);
+        }
+
+
+        public async Task<List<Course>> GetCoursesByAuthor(int authorId, int skip, int take)
+        {
+            return await _context.Courses
+                .Where(c => c.AuthorId == authorId)
+                .OrderByDescending(c => c.CreatedAt)
+                .Skip(skip)
+                .Take(take)
+                .Include(c => c.Author) 
+                .ToListAsync();
+        }
+
+        public async Task<int> CountCoursesByAuthor(int authorId)
+        {
+            return await _context.Courses.CountAsync(c => c.AuthorId == authorId);
+        }
+
+        public async Task UpdateCourse(Course course)
+        {
+            _context.Courses.Update(course);
+            await _context.SaveChangesAsync();
+        }
     }
 }

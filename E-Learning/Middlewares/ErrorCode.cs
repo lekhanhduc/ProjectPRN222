@@ -26,5 +26,9 @@ namespace E_Learning.Middlewares
         public static readonly ErrorCode FAVORITE_EXISTED = new ErrorCode(400, "Favorite existed", HttpStatusCode.BadRequest);
         public static readonly ErrorCode REFRESH_TOKEN_MISSING = new ErrorCode(400, "Refresh token missing", HttpStatusCode.BadRequest);
         public static readonly ErrorCode INVALID_REFRESH_TOKEN = new ErrorCode(400, "Invalid Refresh Token", HttpStatusCode.BadRequest);
+        public static readonly ErrorCode CHAPTER_NOT_EXIST = new ErrorCode(400, "Chapter not existed", HttpStatusCode.BadRequest);
+        public static readonly ErrorCode LESSON_NOT_EXISTED = new ErrorCode(400, "Lesson not existed", HttpStatusCode.BadRequest);
+        public static readonly ErrorCode COURSE_ACCESS_DENIED = new ErrorCode(400, "Access denied", HttpStatusCode.Forbidden);
+        public static readonly ErrorCode LESSON_NOT_EXIST = new ErrorCode(400, "Lesson not existed", HttpStatusCode.BadRequest);
     }
 }

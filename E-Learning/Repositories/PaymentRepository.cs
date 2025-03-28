@@ -33,5 +33,18 @@ namespace E_Learning.Repositories
                 .FirstOrDefaultAsync(payment => payment.OrderCode == orderCode);
         }
 
+        public async Task UpdatePayment(Payment payment)
+        {
+            _context.Payments.Update(payment);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<List<Payment>> FindByCourse(Course course)
+        {
+            return await _context.Payments
+                .Where(p => p.Course.Id == course.Id)
+                .ToListAsync();
+        }
+
     }
 }
