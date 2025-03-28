@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace E_Learning.Migrations
 {
     /// <inheritdoc />
-    public partial class InitDb : Migration
+    public partial class Initdb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,8 +19,8 @@ namespace E_Learning.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     create_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     update_at = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -40,14 +40,18 @@ namespace E_Learning.Migrations
                     name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     first_name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     last_name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    gender = table.Column<string>(type: "nvarchar(50)", nullable: true),
+                    phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    address = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     refresh_token = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     avatar = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     dob = table.Column<DateOnly>(type: "date", nullable: false),
+                    level = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     enabled = table.Column<bool>(type: "bit", nullable: false),
                     role_id = table.Column<int>(type: "int", nullable: false),
-                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     create_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     update_at = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -72,14 +76,14 @@ namespace E_Learning.Migrations
                     description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     thumbnail = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     duration = table.Column<int>(type: "int", nullable: false),
-                    level = table.Column<int>(type: "int", nullable: false),
+                    level = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     language = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    point = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
                     user_id = table.Column<long>(type: "bigint", nullable: false),
-                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -103,8 +107,8 @@ namespace E_Learning.Migrations
                     image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     like_count = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<long>(type: "bigint", nullable: false),
-                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     create_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     update_at = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -138,8 +142,8 @@ namespace E_Learning.Migrations
                     start_date = table.Column<DateTime>(type: "datetime2", nullable: true),
                     end_date = table.Column<DateTime>(type: "datetime2", nullable: true),
                     approval_status = table.Column<string>(type: "nvarchar(50)", nullable: false),
-                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     create_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     update_at = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -170,8 +174,8 @@ namespace E_Learning.Migrations
                     CourseId = table.Column<long>(type: "bigint", nullable: false),
                     certificate_url = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     create_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     update_at = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -201,8 +205,8 @@ namespace E_Learning.Migrations
                     CourseId = table.Column<long>(type: "bigint", nullable: false),
                     chapter_name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     description = table.Column<string>(type: "TEXT", nullable: true),
-                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     create_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     update_at = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -227,8 +231,8 @@ namespace E_Learning.Migrations
                     CourseId = table.Column<long>(type: "bigint", nullable: false),
                     is_purchased = table.Column<bool>(type: "bit", nullable: false),
                     is_complete = table.Column<bool>(type: "bit", nullable: false),
-                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     create_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     update_at = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -257,8 +261,8 @@ namespace E_Learning.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<long>(type: "bigint", nullable: false),
                     CourseId = table.Column<long>(type: "bigint", nullable: false),
-                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     create_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     update_at = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -285,15 +289,16 @@ namespace E_Learning.Migrations
                 {
                     id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<long>(type: "bigint", nullable: false),
+                    UserId = table.Column<long>(type: "bigint", nullable: true),
                     CourseId = table.Column<long>(type: "bigint", nullable: true),
+                    order_code = table.Column<long>(type: "bigint", nullable: true),
                     payment_method = table.Column<string>(type: "nvarchar(50)", nullable: false),
                     payment_gate_way = table.Column<string>(type: "nvarchar(50)", nullable: false),
                     currency = table.Column<string>(type: "nvarchar(50)", nullable: false),
                     status = table.Column<string>(type: "nvarchar(50)", nullable: false),
                     price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     create_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     update_at = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -309,8 +314,7 @@ namespace E_Learning.Migrations
                         name: "FK_payments_users_UserId",
                         column: x => x.UserId,
                         principalTable: "users",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "id");
                 });
 
             migrationBuilder.CreateTable(
@@ -323,8 +327,8 @@ namespace E_Learning.Migrations
                     UserId = table.Column<long>(type: "bigint", nullable: false),
                     PostId = table.Column<long>(type: "bigint", nullable: false),
                     ParentCommentId = table.Column<long>(type: "bigint", nullable: true),
-                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     create_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     update_at = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -362,8 +366,8 @@ namespace E_Learning.Migrations
                     content_type = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     content_url = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     description = table.Column<string>(type: "TEXT", nullable: true),
-                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     create_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     update_at = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -387,8 +391,8 @@ namespace E_Learning.Migrations
                     UserId = table.Column<long>(type: "bigint", nullable: false),
                     LessonId = table.Column<long>(type: "bigint", nullable: false),
                     completed = table.Column<bool>(type: "bit", nullable: false),
-                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     create_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     update_at = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -422,8 +426,8 @@ namespace E_Learning.Migrations
                     CourseId = table.Column<long>(type: "bigint", nullable: true),
                     ChapterId = table.Column<long>(type: "bigint", nullable: true),
                     LessonId = table.Column<long>(type: "bigint", nullable: true),
-                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    created_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    updated_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     create_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     update_at = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },

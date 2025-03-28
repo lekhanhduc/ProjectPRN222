@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Confluent.Kafka;
 using E_Learning.Common;
 
 namespace E_Learning.Entity
@@ -59,6 +60,43 @@ namespace E_Learning.Entity
         public int RoleId { get; set; }
         public Role Role { get; set; }
 
+        [Column("registration_status", TypeName = "nvarchar(50)")] // ← đã sửa lại ở đây
+        public RegistrationStatus? RegistrationStatus { get; set; }
+
+        [Column("otp")]
+        public string? Otp { get; set; }
+
+        [Column("otp_expiry_date")]
+        public DateTime? OtpExpiryDate { get; set; }
+
+        [Column("zip_code")]
+        public string? ZipCode { get; set; }
+
+        [Column("expertise")]
+        public string? Expertise { get; set; }
+
+        [Column("years_of_experience")]
+        public double? YearsOfExperience { get; set; }
+
+        [Column("bio")]
+        public string? Bio { get; set; }
+
+        [Column("certificate")]
+        public string? Certificate { get; set; }
+
+        [Column("cv_url")]
+        public string? CvUrl { get; set; }
+
+        [Column("facebook_link")]
+        public string? FacebookLink { get; set; }
+
+        [Column("points")]
+        public long Points { get; set; } = 0;
+
+        // Posts của User
+        public ICollection<Post> Posts { get; set; } = new List<Post>();
+
+
         public ICollection<Course> Courses { get; set; } = new List<Course>();
         public ICollection<Review> Reviews { get; set; } = new List<Review>();
         public ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
@@ -66,6 +104,9 @@ namespace E_Learning.Entity
         public ICollection<Certificate> Certificates { get; set; } = new List<Certificate>();
         public ICollection<Comment> Comments { get; set; } = new List<Comment>();
         public ICollection<LessonProgress> LessonProgresses { get; set; } = new List<LessonProgress>();
+
+        [NotMapped]
+        public string FullName => $"{FirstName} {LastName}";
 
     }
 }
