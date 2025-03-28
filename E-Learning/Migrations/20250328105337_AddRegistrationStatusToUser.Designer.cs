@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_Learning.Migrations
 {
     [DbContext(typeof(ELearningDbContext))]
-    [Migration("20250304154158_Update Course level")]
-    partial class UpdateCourselevel
+    [Migration("20250328105337_AddRegistrationStatusToUser")]
+    partial class AddRegistrationStatusToUser
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -544,6 +544,10 @@ namespace E_Learning.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("currency");
 
+                    b.Property<long?>("OrderCode")
+                        .HasColumnType("bigint")
+                        .HasColumnName("order_code");
+
                     b.Property<string>("PaymentGateWay")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
@@ -571,7 +575,7 @@ namespace E_Learning.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("updated_by");
 
-                    b.Property<long>("UserId")
+                    b.Property<long?>("UserId")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
@@ -746,6 +750,10 @@ namespace E_Learning.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("address");
+
                     b.Property<string>("Avatar")
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("avatar");
@@ -780,10 +788,18 @@ namespace E_Learning.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("first_name");
 
+                    b.Property<string>("Gender")
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("gender");
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("last_name");
+
+                    b.Property<string>("Level")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("level");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -794,9 +810,17 @@ namespace E_Learning.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("password");
 
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("phone");
+
                     b.Property<string>("RefreshToken")
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("refresh_token");
+
+                    b.Property<int?>("RegistrationStatus")
+                        .HasColumnType("int")
+                        .HasColumnName("registration_status");
 
                     b.Property<int>("RoleId")
                         .HasColumnType("int")
@@ -975,9 +999,7 @@ namespace E_Learning.Migrations
 
                     b.HasOne("E_Learning.Entity.User", "User")
                         .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Course");
 

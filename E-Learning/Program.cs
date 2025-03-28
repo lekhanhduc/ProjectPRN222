@@ -3,6 +3,7 @@ using E_Learning.Data;
 using E_Learning.Entity;
 using E_Learning.Middlewares;
 using E_Learning.Repositories;
+using E_Learning.Services.admin;
 using E_Learning.Servies;
 using E_Learning.Servies.Impl;
 using Microsoft.AspNetCore.Identity;
@@ -63,6 +64,8 @@ namespace E_Learning
             builder.Services.AddScoped<PaymentRepository>();
             builder.Services.AddScoped<SearchRepository>();
             builder.Services.AddScoped<RoleRepository>();
+            builder.Services.AddScoped<IAdminUserService, AdminUserService>();
+            builder.Services.AddScoped<IAdminTeacherService, AdminTeacherService>();
             builder.Services.AddDbContext<ELearningDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
