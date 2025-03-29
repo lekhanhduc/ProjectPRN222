@@ -80,5 +80,22 @@ namespace E_Learning.Servies.Impl
             return response;
         }
 
+        public async Task<List<AdsActiveResponse>> GetAdsWithActive()
+        {
+            var advertisements = await advertisementRepository.FindAdvertisementByApprovalStatusActive(AdsStatus.COMPLETED);
+
+            return advertisements.Select(ads => new AdsActiveResponse
+            {
+                Id = ads.Id,
+                Title = ads.Title,
+                Image = ads.Image,
+                Price = ads.Price ?? 0, 
+                Description = ads.Description,
+                Link = ads.Link,
+                StartDate = ads.StartDate,
+                EndDate = ads.EndDate
+            }).ToList();
+        }
+
     }
 }

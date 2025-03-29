@@ -2,7 +2,7 @@
 {
     public class VerificationResponse
     {
-        bool Success { get; set; }
+        public bool Success { get; set; }
 
         public VerificationResponse(bool Success)
         {

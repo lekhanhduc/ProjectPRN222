@@ -55,16 +55,20 @@ namespace E_Learning.Controllers
 
         [HttpGet("verification")]
         [AllowAnonymous]
-        public async Task<ApiResponse<VerificationResponse>> Verification([FromQuery] string email, [FromQuery] string otp)
+        public async Task<IActionResult> Verification([FromQuery] string email, [FromQuery] string otp)
         {
             var result = await userService.Verification(email, otp);
 
-            return new ApiResponse<VerificationResponse>(
-                code: 201,
-                message: "Verfication success",
-                result: result
-            );
+            if (result.Success)
+            {
+                return Redirect("http://localhost:3000/login?verifySuccess=true");
+            }
+            else
+            {
+                return Redirect("http://localhost:3000/register?verifyFailed=true");
+            }
         }
+
 
         [Authorize]
         [HttpGet("my-info")]

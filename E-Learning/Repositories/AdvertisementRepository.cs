@@ -1,5 +1,7 @@
-﻿using E_Learning.Data;
+﻿using E_Learning.Common;
+using E_Learning.Data;
 using E_Learning.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace E_Learning.Repositories
 {
@@ -19,7 +21,13 @@ namespace E_Learning.Repositories
             await _context.SaveChangesAsync();
             return advertisement;
         }
-        
+
+        public async Task<List<Advertisement>> FindAdvertisementByApprovalStatusActive(AdsStatus status)
+        {
+            return await _context.Advertisements
+                .Where(a => a.ApprovalStatus == status)
+                .ToListAsync();
+        }
 
     }
 }

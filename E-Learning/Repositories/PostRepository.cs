@@ -19,9 +19,11 @@ namespace E_Learning.Repositories
             return await _context.Posts.ToListAsync();
         }
 
-        public async Task<Post> GetById(int id)
+        public async Task<Post> GetById(long id)
         {
-            return await _context.Posts.FindAsync(id);
+            return await _context.Posts
+                .Include(p => p.User)
+                .FirstOrDefaultAsync(p => p.Id == id);
         }
 
         public async Task<List<Post>> FindAll(int page, int size)

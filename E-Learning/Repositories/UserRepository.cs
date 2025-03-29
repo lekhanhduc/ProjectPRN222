@@ -52,6 +52,7 @@ namespace E_Learning.Repositories
         public async Task<User?> FindUserById(long id)
         {
             return await _context.Users
+                .Include(u => u.Role)
                                  .FirstOrDefaultAsync(u => u.Id == id);
         }
 

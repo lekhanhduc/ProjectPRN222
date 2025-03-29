@@ -64,6 +64,7 @@ namespace E_Learning
             builder.Services.AddScoped<IReviewService, ReviewService>();
             builder.Services.AddScoped<IPostService, PostService>();
             builder.Services.AddScoped<IAdvertisementService, AdvertisementService>();
+            builder.Services.AddScoped<ICommentService, CommentService>();
 
             builder.Services.AddScoped<CourseRepository>();
             builder.Services.AddScoped<UserRepository>();
@@ -81,6 +82,7 @@ namespace E_Learning
             builder.Services.AddScoped<PostRepository>();
             builder.Services.AddScoped<ReviewRepository>();
             builder.Services.AddScoped<AdvertisementRepository>();
+            builder.Services.AddScoped<CommentRepository>();
             builder.Services.AddDbContext<ELearningDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 

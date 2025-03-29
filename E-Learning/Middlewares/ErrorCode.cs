@@ -39,5 +39,8 @@ namespace E_Learning.Middlewares
         public static readonly ErrorCode INVALID_RATING = new ErrorCode(400, "Invalid rating", HttpStatusCode.BadRequest);
         public static readonly ErrorCode REVIEW_NOT_EXISTED = new ErrorCode(400, "Review not existed", HttpStatusCode.BadRequest);
         public static readonly ErrorCode DELETE_COMMENT_INVALID = new ErrorCode(400, "Delete review invalid", HttpStatusCode.BadRequest);
+        public static readonly ErrorCode POST_NOT_EXISTED = new ErrorCode(400, "Post not existed", HttpStatusCode.BadRequest);
+        public static readonly ErrorCode CONTENT_COMMENT_INVALID = new ErrorCode(400, "Comment cannot be blank", HttpStatusCode.BadRequest);
+        public static readonly ErrorCode COMMENT_NOT_EXISTED = new ErrorCode(400, "Comment not existed", HttpStatusCode.BadRequest);
     }
 }

@@ -31,5 +31,17 @@ namespace E_Learning.Controllers
             };
         }
 
+        [HttpGet("completed")]
+        public async Task<ApiResponse<List<AdsActiveResponse>>> GetAdsWithActive()
+        {
+            var result = await advertisementService.GetAdsWithActive();
+            return new ApiResponse<List<AdsActiveResponse>>
+            {
+                code = 200,
+                message = "Success",
+                result = result
+            };
+        }
+
     }
 }
