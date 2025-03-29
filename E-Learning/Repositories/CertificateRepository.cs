@@ -1,5 +1,6 @@
 ﻿using E_Learning.Data;
 using E_Learning.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace E_Learning.Repositories
 {
@@ -13,10 +14,26 @@ namespace E_Learning.Repositories
             _context = context;
         }
 
-        public void Add(Certificate certificate)
+        public async Task Add(Certificate certificate)
         {
-            _context.Certificates.Add(certificate);
-            _context.SaveChanges();
+            await _context.Certificates.AddAsync(certificate);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<bool> ExistsByCourseAndUser(Course course, User user)
+        {
+            return await _context.Certificates
+                .AnyAsync(c => c.CourseId == course.Id && c.UserId == user.Id);
+        }
+
+        public async Task<List<Certificate>> FindByUserAsync(User user)
+        {
+            return await _context.Certificates
+                .Where(c => c.UserId == user.Id)
+                .Include(c => c.Course)         
+                    .ThenInclude(course => course.Author) 
+                .Include(c => c.User)         
+                .ToListAsync();
         }
 
     }

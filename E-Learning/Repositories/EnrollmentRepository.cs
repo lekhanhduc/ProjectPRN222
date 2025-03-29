@@ -53,5 +53,15 @@ namespace E_Learning.Repositories
             await _context.SaveChangesAsync();
         }
 
+        public async Task<List<Enrollment>> FindCourseByUser(User user)
+        {
+            return await _context.Enrollments
+                .Where(enrollment => enrollment.UserId == user.Id)
+                .Include(enrollment => enrollment.Course)  
+                .ThenInclude(course => course.Author)    
+                .ToListAsync();
+        }
+
+
     }
 }

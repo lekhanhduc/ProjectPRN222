@@ -28,6 +28,9 @@ namespace E_Learning.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.Email)
+                .IsUnique();
 
             modelBuilder.Entity<Certificate>()
                 .HasOne(c => c.User)

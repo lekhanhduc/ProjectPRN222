@@ -44,7 +44,6 @@ namespace E_Learning
             builder.Services.AddCustomCors(allowedOrigins);                     // CORS
             builder.Services.CustomizeRedis(builder.Configuration);            // Redis
             builder.Services.AddElasticSearch(builder.Configuration);         // ElasticSearch
-
             builder.Services.AddHttpContextAccessor();
             builder.Services.AddSingleton<CloudinaryService>();
             builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
@@ -62,6 +61,10 @@ namespace E_Learning
             builder.Services.AddScoped<ILessonProgressService, LessonProgressService>();
             builder.Services.AddScoped<IEnrollmentService, EnrollmentService>();
             builder.Services.AddScoped<ICertificationService, CertificateService>();
+            builder.Services.AddScoped<IReviewService, ReviewService>();
+            builder.Services.AddScoped<IPostService, PostService>();
+            builder.Services.AddScoped<IAdvertisementService, AdvertisementService>();
+
             builder.Services.AddScoped<CourseRepository>();
             builder.Services.AddScoped<UserRepository>();
             builder.Services.AddScoped<FavoriteRepository>();
@@ -75,6 +78,9 @@ namespace E_Learning
             builder.Services.AddScoped<LessonRepository>();
             builder.Services.AddScoped<LessonProgressRepository>();
             builder.Services.AddScoped<CertificateRepository>();
+            builder.Services.AddScoped<PostRepository>();
+            builder.Services.AddScoped<ReviewRepository>();
+            builder.Services.AddScoped<AdvertisementRepository>();
             builder.Services.AddDbContext<ELearningDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 

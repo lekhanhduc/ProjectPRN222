@@ -16,6 +16,7 @@ namespace E_Learning.Middlewares
         }
 
         public static readonly ErrorCode USER_NOT_EXISTED = new ErrorCode(404, "User not existed", HttpStatusCode.NotFound);
+        public static readonly ErrorCode USER_EXISTED = new ErrorCode(404, "User existed", HttpStatusCode.NotFound);
         public static readonly ErrorCode UNAUTHORIZED = new ErrorCode(401, "Unauthorized", HttpStatusCode.Unauthorized);
         public static readonly ErrorCode ROLE_EXISTED = new ErrorCode(400, "Role existed", HttpStatusCode.BadRequest);
         public static readonly ErrorCode ROLE_NOT_EXISTED = new ErrorCode(400, "Role not existed", HttpStatusCode.NotFound);
@@ -30,5 +31,13 @@ namespace E_Learning.Middlewares
         public static readonly ErrorCode LESSON_NOT_EXISTED = new ErrorCode(400, "Lesson not existed", HttpStatusCode.BadRequest);
         public static readonly ErrorCode COURSE_ACCESS_DENIED = new ErrorCode(400, "Access denied", HttpStatusCode.Forbidden);
         public static readonly ErrorCode LESSON_NOT_EXIST = new ErrorCode(400, "Lesson not existed", HttpStatusCode.BadRequest);
+        public static readonly ErrorCode COURSE_NOT_PURCHASED = new ErrorCode(400, "Course not purchased", HttpStatusCode.BadRequest);
+        public static readonly ErrorCode INCOMPLETE_LESSONS = new ErrorCode(400, "In complete lesson", HttpStatusCode.BadRequest);
+        public static readonly ErrorCode CERTIFICATE_EXISTED = new ErrorCode(400, "Certification existed", HttpStatusCode.BadRequest);
+        public static readonly ErrorCode INVALID_COMMENT_OR_RATING = new ErrorCode(400, "Invalid comment", HttpStatusCode.BadRequest);
+        public static readonly ErrorCode PARENT_COMMENT_NOT_EXISTED = new ErrorCode(400, "Parent comment not existed", HttpStatusCode.BadRequest);
+        public static readonly ErrorCode INVALID_RATING = new ErrorCode(400, "Invalid rating", HttpStatusCode.BadRequest);
+        public static readonly ErrorCode REVIEW_NOT_EXISTED = new ErrorCode(400, "Review not existed", HttpStatusCode.BadRequest);
+        public static readonly ErrorCode DELETE_COMMENT_INVALID = new ErrorCode(400, "Delete review invalid", HttpStatusCode.BadRequest);
     }
 }

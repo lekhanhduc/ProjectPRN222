@@ -25,6 +25,7 @@ namespace E_Learning.Entity
         public string ContactPhone { get; set; }
 
         [Column("price", TypeName = "decimal(18,2)")]
+
         public decimal? Price { get; set; }
 
         [ForeignKey("UserId")]
@@ -35,20 +36,23 @@ namespace E_Learning.Entity
         public Course? Course { get; set; }
         public long? CourseId { get; set; }
 
+
         [Column("image_ads")]
         public string? Image { get; set; }
 
+
         [Column("location")]
         public string? Location { get; set; }
+
 
         [Column("link")]
         public string? Link { get; set; }
 
         [Column("start_date")]
-        public DateTime? StartDate { get; set; }
+        public DateOnly StartDate { get; set; }
 
         [Column("end_date")]
-        public DateTime? EndDate { get; set; }
+        public DateOnly EndDate { get; set; }
 
         [Required]
         [Column("approval_status", TypeName = "nvarchar(50)")]

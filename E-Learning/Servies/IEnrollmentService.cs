@@ -6,5 +6,6 @@ namespace E_Learning.Servies
     public interface IEnrollmentService
     {
         Task<IsCourseCompleteResponse> IsCompleteCourse(IsCourseCompleteRequest request);
+        Task<List<BuyCourseResponse>> GetCourseByUserCurrent();
     }
 }

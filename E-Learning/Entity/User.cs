@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using Confluent.Kafka;
 using E_Learning.Common;
+using Microsoft.EntityFrameworkCore;
 
 namespace E_Learning.Entity
 {
@@ -98,7 +99,6 @@ namespace E_Learning.Entity
 
         // Posts của User
         public ICollection<Post> Posts { get; set; } = new List<Post>();
-
 
         public ICollection<Course> Courses { get; set; } = new List<Course>();
         public ICollection<Review> Reviews { get; set; } = new List<Review>();

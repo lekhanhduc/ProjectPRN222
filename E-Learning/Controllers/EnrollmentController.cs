@@ -29,5 +29,17 @@ namespace E_Learning.Controllers
             };
         }
 
+        [HttpGet("courses-current-login")]
+        public async Task<ApiResponse<List<BuyCourseResponse>>> GetCourseByUserCurrent()
+        {
+            var result = await enrollmentService.GetCourseByUserCurrent();
+            return new ApiResponse<List<BuyCourseResponse>>
+            {
+                code = 200,
+                message = "Get course by user",
+                result = result
+            };
+        }
+
     }
 }

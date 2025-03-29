@@ -43,7 +43,7 @@ namespace E_Learning.Servies.Impl
             if (userOptinal != null)
             {
                 logger.LogError("User Existed");
-                throw new AppException(ErrorCode.USER_NOT_EXISTED);
+                throw new AppException(ErrorCode.USER_EXISTED);
             }
 
             User user = new User();
