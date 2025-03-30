@@ -15,5 +15,27 @@
                 });
             });
         }
+
+        public static void ConfigureServices(IServiceCollection services)
+        {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll",
+                    builder => builder
+                        .AllowAnyOrigin() // Cho phép bất kỳ nguồn nào
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
+            });
+        }
+
+        public static void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            app.UseCors("AllowAll");
+            app.UseRouting();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+        }
     }
 }
