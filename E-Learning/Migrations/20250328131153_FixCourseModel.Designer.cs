@@ -12,13 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_Learning.Migrations
 {
     [DbContext(typeof(ELearningDbContext))]
-<<<<<<<< HEAD:E-Learning/Migrations/20250328091836_Init db.Designer.cs
-    [Migration("20250328091836_Init db")]
-    partial class Initdb
-========
-    [Migration("20250327114738_Initial")]
-    partial class Initial
->>>>>>>> 009913e (thanhvu fix code):E-Learning/Migrations/20250327114738_Initial.Designer.cs
+    [Migration("20250328131153_FixCourseModel")]
+    partial class FixCourseModel
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -299,6 +294,9 @@ namespace E_Learning.Migrations
                     b.Property<int>("Duration")
                         .HasColumnType("int")
                         .HasColumnName("duration");
+
+                    b.Property<bool>("Enabled")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Language")
                         .IsRequired()
@@ -763,6 +761,14 @@ namespace E_Learning.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("avatar");
 
+                    b.Property<string>("Bio")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("bio");
+
+                    b.Property<string>("Certificate")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("certificate");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2")
                         .HasColumnName("create_at");
@@ -770,6 +776,10 @@ namespace E_Learning.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("created_by");
+
+                    b.Property<string>("CvUrl")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("cv_url");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)")
@@ -787,6 +797,14 @@ namespace E_Learning.Migrations
                     b.Property<bool>("Enabled")
                         .HasColumnType("bit")
                         .HasColumnName("enabled");
+
+                    b.Property<string>("Expertise")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("expertise");
+
+                    b.Property<string>("FacebookLink")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("facebook_link");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -811,6 +829,14 @@ namespace E_Learning.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("name");
 
+                    b.Property<string>("Otp")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("otp");
+
+                    b.Property<DateTime?>("OtpExpiryDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("otp_expiry_date");
+
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("password");
@@ -819,9 +845,17 @@ namespace E_Learning.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("phone");
 
+                    b.Property<long>("Points")
+                        .HasColumnType("bigint")
+                        .HasColumnName("points");
+
                     b.Property<string>("RefreshToken")
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("refresh_token");
+
+                    b.Property<string>("RegistrationStatus")
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("registration_status");
 
                     b.Property<int>("RoleId")
                         .HasColumnType("int")
@@ -834,6 +868,14 @@ namespace E_Learning.Migrations
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("updated_by");
+
+                    b.Property<double?>("YearsOfExperience")
+                        .HasColumnType("float")
+                        .HasColumnName("years_of_experience");
+
+                    b.Property<string>("ZipCode")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("zip_code");
 
                     b.HasKey("Id");
 
@@ -1010,7 +1052,7 @@ namespace E_Learning.Migrations
             modelBuilder.Entity("E_Learning.Entity.Post", b =>
                 {
                     b.HasOne("E_Learning.Entity.User", "User")
-                        .WithMany()
+                        .WithMany("Posts")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1120,6 +1162,8 @@ namespace E_Learning.Migrations
                     b.Navigation("Favorites");
 
                     b.Navigation("LessonProgresses");
+
+                    b.Navigation("Posts");
 
                     b.Navigation("Reviews");
                 });

@@ -5,23 +5,24 @@
 namespace E_Learning.Migrations
 {
     /// <inheritdoc />
-    public partial class AddRegistrationStatusToUser : Migration
+    public partial class Vu_UserQr : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<int>(
-                name: "registration_status",
+            migrationBuilder.AddColumn<string>(
+                name: "qr",
                 table: "users",
-                type: "int",
-                nullable: true);
+                type: "nvarchar(max)",
+                nullable: false,
+                defaultValue: "");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "registration_status",
+                name: "qr",
                 table: "users");
         }
     }

@@ -8,5 +8,9 @@
         {
             this.ErrorCode = errorCode;
         }
+
+        public AppException(string? message) : base(message)
+        {
+        }
     }
 }

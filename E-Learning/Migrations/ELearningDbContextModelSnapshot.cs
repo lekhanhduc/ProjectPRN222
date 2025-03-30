@@ -292,6 +292,9 @@ namespace E_Learning.Migrations
                         .HasColumnType("int")
                         .HasColumnName("duration");
 
+                    b.Property<bool>("Enabled")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Language")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
@@ -842,6 +845,11 @@ namespace E_Learning.Migrations
                     b.Property<long>("Points")
                         .HasColumnType("bigint")
                         .HasColumnName("points");
+
+                    b.Property<string>("Qr")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("qr");
 
                     b.Property<string>("RefreshToken")
                         .HasColumnType("nvarchar(max)")

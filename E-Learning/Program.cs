@@ -5,7 +5,9 @@ using E_Learning.Middlewares;
 using E_Learning.Repositories;
 using E_Learning.Services.admin;
 using E_Learning.Servies;
+using E_Learning.Servies.admin;
 using E_Learning.Servies.Impl;
+using E_Learning.Utils;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -37,6 +39,7 @@ namespace E_Learning
                 client.BaseAddress = new Uri("https://www.googleapis.com/");
             });
 
+
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
@@ -65,7 +68,10 @@ namespace E_Learning
             builder.Services.AddScoped<SearchRepository>();
             builder.Services.AddScoped<RoleRepository>();
             builder.Services.AddScoped<IAdminUserService, AdminUserService>();
-            builder.Services.AddScoped<IAdminTeacherService, AdminTeacherService>();
+            builder.Services.AddScoped<AdminTeacherService>();
+            builder.Services.AddScoped<AdminCourseService>();
+            builder.Services.AddScoped<RegisterTeacherService>();
+            builder.Services.AddScoped<FileService>();
             builder.Services.AddDbContext<ELearningDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 

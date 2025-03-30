@@ -6,11 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace E_Learning.Migrations
 {
     /// <inheritdoc />
-<<<<<<<< HEAD:E-Learning/Migrations/20250328091836_Init db.cs
-    public partial class Initdb : Migration
-========
-    public partial class Initial : Migration
->>>>>>>> 009913e (thanhvu fix code):E-Learning/Migrations/20250327114738_Initial.cs
+    public partial class FixCourseModel : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -54,6 +50,17 @@ namespace E_Learning.Migrations
                     level = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     enabled = table.Column<bool>(type: "bit", nullable: false),
                     role_id = table.Column<int>(type: "int", nullable: false),
+                    registration_status = table.Column<string>(type: "nvarchar(50)", nullable: true),
+                    otp = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    otp_expiry_date = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    zip_code = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    expertise = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    years_of_experience = table.Column<double>(type: "float", nullable: true),
+                    bio = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    certificate = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    cv_url = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    facebook_link = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    points = table.Column<long>(type: "bigint", nullable: false),
                     created_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     updated_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     create_at = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -86,6 +93,7 @@ namespace E_Learning.Migrations
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
                     user_id = table.Column<long>(type: "bigint", nullable: false),
+                    Enabled = table.Column<bool>(type: "bit", nullable: false),
                     created_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     updated_by = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },

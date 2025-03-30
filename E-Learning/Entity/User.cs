@@ -93,6 +93,9 @@ namespace E_Learning.Entity
         [Column("points")]
         public long Points { get; set; } = 0;
 
+        [Column("qr")]
+        public string Qr { get; set; }
+
         // Posts của User
         public ICollection<Post> Posts { get; set; } = new List<Post>();
 

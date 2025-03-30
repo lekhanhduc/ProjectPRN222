@@ -40,6 +40,9 @@ namespace E_Learning.Entity
         public long AuthorId { get; set; }
         public User Author { get; set; }
 
+        [Required]
+        public bool Enabled { get; set; }
+
         public ICollection<Review> Reviews { get; set; } = new List<Review>();
         public ICollection<Certificate> Certificates { get; set; } = new List<Certificate>();
         public ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
