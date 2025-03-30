@@ -72,6 +72,8 @@ namespace E_Learning
             builder.Services.AddScoped<EnrollmentRepository>();
             builder.Services.AddScoped<PaymentRepository>();
             builder.Services.AddScoped<SearchRepository>();
+            builder.Services.AddScoped<EnrollmentRepository>();
+            builder.Services.AddScoped<PaymentRepository>();
             builder.Services.AddScoped<RoleRepository>();
             builder.Services.AddScoped<IAdminUserService, AdminUserService>();
             builder.Services.AddScoped<IAdminTeacherService, AdminTeacherService>();

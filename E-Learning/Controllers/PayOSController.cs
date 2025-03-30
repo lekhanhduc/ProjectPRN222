@@ -23,9 +23,9 @@ namespace E_Learning.Controllers
         private readonly CourseRepository courseRepository;
         private readonly IEmailService emailService;
         private readonly IHttpContextAccessor httpContextAccessor;
+       
         public PayOSController(PayOS payOS, PaymentRepository paymentRepository, 
-                EnrollmentRepository enrollmentRepository, IHttpContextAccessor httpContextAccessor,
-                IEmailService emailService, CourseRepository courseRepository)
+                EnrollmentRepository enrollmentRepository, IHttpContextAccessor httpContextAccessor)
         {
             _payOS = payOS;
             this.paymentRepository = paymentRepository;
@@ -101,6 +101,7 @@ namespace E_Learning.Controllers
                     Course course = payment.Course;
                     course.Quantity = course.Quantity + 1;
 
+                    
                     User user = payment.User;
                     Enrollment enrollment = new Enrollment
                     {
