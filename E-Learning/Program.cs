@@ -103,6 +103,7 @@ namespace E_Learning
             builder.Services.AddScoped<FileService>();
             builder.Services.AddScoped<IAdminAdvertisementService, AdminAdvertisementService>();
 
+            builder.Services.AddScoped<AdminSalaryService>();
             builder.Services.AddDbContext<ELearningDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 

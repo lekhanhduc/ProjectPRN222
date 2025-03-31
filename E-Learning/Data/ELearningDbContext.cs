@@ -26,6 +26,8 @@ namespace E_Learning.Data
         public DbSet<Certificate> Certificates { get; set; }
         public DbSet<Advertisement> Advertisements { get; set; }
 
+        public DbSet<Salary> Salaries { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()

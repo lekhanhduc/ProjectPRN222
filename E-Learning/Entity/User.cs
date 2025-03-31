@@ -89,7 +89,7 @@ namespace E_Learning.Entity
         public string? CvUrl { get; set; }
 
         [Column("facebook_link")]
-        public string? FacebookLink { get; set; }
+        public string? FacebookLink { get;  set; }
 
         [Column("points")]
         public long Points { get; set; } = 0;
