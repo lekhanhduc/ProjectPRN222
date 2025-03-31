@@ -42,5 +42,7 @@ namespace E_Learning.Middlewares
         public static readonly ErrorCode POST_NOT_EXISTED = new ErrorCode(400, "Post not existed", HttpStatusCode.BadRequest);
         public static readonly ErrorCode CONTENT_COMMENT_INVALID = new ErrorCode(400, "Comment cannot be blank", HttpStatusCode.BadRequest);
         public static readonly ErrorCode COMMENT_NOT_EXISTED = new ErrorCode(400, "Comment not existed", HttpStatusCode.BadRequest);
+        public static readonly ErrorCode FORBIDDEN = new ErrorCode(400, "Forbitdden", HttpStatusCode.BadRequest);
+        public static readonly ErrorCode INVALID_COMMENT_CONTENT = new ErrorCode(400, "Comment cannot be null", HttpStatusCode.BadRequest);
     }
 }

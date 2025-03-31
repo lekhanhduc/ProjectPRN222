@@ -1,0 +1,11 @@
+﻿groups:
+  - name: application-alerts
+    rules:
+      - alert: HighErrorRate
+        expr: rate(http_server_requests_seconds_count{status=~"4.."}[5m]) > 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High error rate detected in Spring Boot service"
+          description: "Error rate for {{ $labels.uri }} is above threshold."

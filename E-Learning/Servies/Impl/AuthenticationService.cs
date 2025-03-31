@@ -297,7 +297,7 @@ namespace E_Learning.Servies.Impl
 
             if (user == null)
             {
-                Role? role = await roleRepository.FindByRoleName(DefinitionRole.USER);
+                var role = await roleRepository.FindByRoleName(DefinitionRole.USER);
                 if (role == null)
                 {
                     role = new Role();

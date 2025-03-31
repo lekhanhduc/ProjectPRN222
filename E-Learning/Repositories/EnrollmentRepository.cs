@@ -63,6 +63,23 @@ namespace E_Learning.Repositories
                 .ToListAsync();
         }
 
+        public async Task<List<Enrollment>> FindPurchasedUsersByTeacherId(long teacherId, int page, int size)
+        {
+            return await _context.Enrollments
+                .Where(enrollment => enrollment.Course.AuthorId == teacherId)
+                .Include(enrollment => enrollment.User)
+                .Include(enrollment => enrollment.Course)
+                .Skip((page - 1) * size)
+                .Take(size)
+                .ToListAsync();
+        }
+
+        public async Task<int> GetTotalEnrollmentsCount(long teacherId)
+        {
+            return await _context.Enrollments
+                .Where(e => e.Course.AuthorId == teacherId)
+                .CountAsync();
+        }
 
         public List<AdminUserBuyDTO> GetUserBuyStatsByMonth(int month, int year)
         {

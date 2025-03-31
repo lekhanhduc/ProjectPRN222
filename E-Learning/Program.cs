@@ -4,12 +4,15 @@ using E_Learning.Entity;
 using E_Learning.Middlewares;
 using E_Learning.Repositories;
 using E_Learning.Services.admin;
+using E_Learning.Services.Impl;
 using E_Learning.Servies;
 using E_Learning.Servies.admin;
 using E_Learning.Servies.Impl;
 using E_Learning.Utils;
+using Hangfire;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Prometheus;
 
 namespace E_Learning
 {
@@ -42,6 +45,7 @@ namespace E_Learning
 
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddHealthChecks();
 
             builder.Services.AddCustomJwtAuthentication(builder.Configuration);  // JWT
             builder.Services.AddCustomCors(allowedOrigins);                     // CORS
@@ -68,6 +72,8 @@ namespace E_Learning
             builder.Services.AddScoped<IPostService, PostService>();
             builder.Services.AddScoped<IAdvertisementService, AdvertisementService>();
             builder.Services.AddScoped<ICommentService, CommentService>();
+            builder.Services.AddScoped<ITeacherService, TeacherService>();
+            builder.Services.AddScoped<IRevenueService, RevenueService>();
 
             builder.Services.AddScoped<CourseRepository>();
             builder.Services.AddScoped<UserRepository>();
@@ -108,7 +114,10 @@ namespace E_Learning
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+
             app.UseRouting();
+            app.MapMetrics();
             app.UseCors("_myAllowSpecificOrigins");
             app.UseMiddleware<ExceptionMiddleware>();
 
@@ -118,7 +127,7 @@ namespace E_Learning
             app.UseAuthorization();
 
             app.MapControllers();
-
+            app.UseHttpMetrics();
             app.Run();
         }
     }

@@ -93,7 +93,7 @@ namespace E_Learning.Controllers
         [HttpGet("teacher")]
         public async Task<ApiResponse<PageResponse<CourseResponse>>> GetMyCourses(
                 [FromQuery] int page = 1,
-                [FromQuery] int size = 4) 
+                [FromQuery] int size = 5) 
         {
             var result = await courseService.GetCourseByTeacher(page, size);
 

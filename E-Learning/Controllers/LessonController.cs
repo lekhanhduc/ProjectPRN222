@@ -43,5 +43,31 @@ namespace E_Learning.Controllers
             };
         }
 
+        [HttpPost("comment")]
+        [Authorize]
+        public async Task<ApiResponse<CommentLessonResponse>> AddCommentLesson([FromBody] CommentLessonRequest request)
+        {
+            var result = await lessonService.AddCommentLesson(request);
+            return new ApiResponse<CommentLessonResponse>
+            {
+                code = 201,
+                message = "Created comment",
+                result = result
+            };
+        }
+
+        [HttpGet("comment/{lessonId}")]
+        [Authorize]
+        public async Task<ApiResponse<List<CommentLessonResponse>>> GetCommentByLesson(long lessonId)
+        {
+            var result = await lessonService.GetCommentByLesson(lessonId);
+            return new ApiResponse<List<CommentLessonResponse>>
+            {
+                code = 200,
+                message = "Get comment by lesson",
+                result = result
+            };
+        }
+
     }
 }

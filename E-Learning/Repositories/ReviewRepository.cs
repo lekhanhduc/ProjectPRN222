@@ -87,6 +87,15 @@ namespace E_Learning.Repositories
                 .ToListAsync();
         }
 
+        public async Task<List<Review>> FindByLessonIdAsync(long lessonId)
+        {
+            return await _context.Reviews
+                .Where(r => r.LessonId == lessonId)
+                .Include(r => r.User) 
+                .Include(r => r.Replies) 
+                .ToListAsync();
+        }
+
     }
 }
 

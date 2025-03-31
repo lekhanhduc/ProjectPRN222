@@ -1,20 +1,5 @@
 version: "3"
 services:
-  # kafka:
-  #   image: 'bitnami/kafka:3.7.0'
-  #   container_name: kafka
-  #   hostname: kafka
-  #   ports:
-  #     - '9094:9094'
-  #   environment:
-  #     - KAFKA_CFG_NODE_ID=0
-  #     - KAFKA_CFG_PROCESS_ROLES=controller,broker
-  #     - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=0@kafka:9093
-  #     - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093,EXTERNAL://:9094
-  #     - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092,EXTERNAL://localhost:9094
-  #     - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,EXTERNAL:PLAINTEXT,PLAINTEXT:PLAINTEXT
-  #     - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
-
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.16.4
     container_name: elasticsearch
@@ -29,7 +14,7 @@ services:
       - "9200:9200"
       - "9300:9300"
     volumes:
-      - elasticsearch-data:/usr/share/elasticsearch/data  
+      - elasticsearch-data:/usr/share/elasticsearch/data
     networks:
       - elastic
 
@@ -45,9 +30,56 @@ services:
     networks:
       - elastic
 
-networks:
-  elastic:
-    driver: bridge
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - '9090:9090'
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+      - ./alerts.yml:/etc/prometheus/alerts.yml
+    networks:
+      - monitoring
+
+  alertmanager:
+    image: prom/alertmanager:latest
+    container_name: alertmanager
+    ports:
+      - "9093:9093"
+    volumes:
+      - ./alertmanager.yml:/etc/alertmanager/alertmanager.yml
+    command:
+      - '--config.file=/etc/alertmanager/alertmanager.yml'
+    networks:
+      - monitoring
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3001:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: 'admin'
+      GF_SECURITY_ADMIN_PASSWORD: 'admin'
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana.ini:/etc/grafana/grafana.ini
+    networks:
+      - monitoring
+    depends_on:
+      - prometheus
 
 volumes:
-  elasticsearch-data: 
+  prometheus_data:
+    driver: local
+  grafana_data:
+    driver: local
+  elasticsearch-data:
+    driver: local
+
+networks:
+  monitoring:
+    driver: bridge
+  elastic:
+    driver: bridge

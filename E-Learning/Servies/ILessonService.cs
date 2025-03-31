@@ -7,5 +7,8 @@ namespace E_Learning.Servies
     {
         Task<LessonCreationResponse> CreateLesson(LessonCreationRequest request);
         Task DeleteLesson(long lessonId);
+        Task<CommentLessonResponse> AddCommentLesson(CommentLessonRequest request);
+        Task<List<CommentLessonResponse>> GetCommentByLesson(long lessonId);
     }
+
 }

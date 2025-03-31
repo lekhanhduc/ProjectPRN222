@@ -1,5 +1,7 @@
 ﻿using E_Learning.Data;
 using E_Learning.Dto.Response.admin;
+﻿using E_Learning.Common;
+using E_Learning.Data;
 using E_Learning.Entity;
 using Microsoft.EntityFrameworkCore;
 
@@ -83,6 +85,22 @@ namespace E_Learning.Repositories
                 })
                 .OrderBy(r => r.Month)
                 .ToList();
+        }
+
+        public async Task<List<Payment>> FindPaymentsByAuthorStatusAndDateRangeAsync(User user, PaymentStatus status, DateTime start, DateTime end)
+        {
+            start = start.Date; 
+            end = end.Date.AddDays(1).AddSeconds(-1); // Lấy đến cuối ngày (23:59:59) của ngày cuối cùng
+
+            var payments = await _context.Payments
+                .Include(p => p.Course)  
+                .Where(p => p.Course.AuthorId == user.Id  
+                            && p.Status == status
+                            && p.CreatedAt >= start 
+                            && p.CreatedAt <= end)  
+                .ToListAsync();
+
+            return payments;
         }
 
     }
