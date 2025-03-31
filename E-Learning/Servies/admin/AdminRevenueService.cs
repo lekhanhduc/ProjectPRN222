@@ -38,7 +38,7 @@ namespace E_Learning.Servies.admin
                 var course = payment.Course;
                 var teacher = course?.Author;
 
-                if (teacher != null && teacher.RoleId == 3)
+                if (teacher != null && teacher.RoleId ==4)
                 {
                     if (!map.ContainsKey(teacher.Id))
                     {
