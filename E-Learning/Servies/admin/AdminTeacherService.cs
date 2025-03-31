@@ -1,7 +1,8 @@
 ﻿    using E_Learning.Common;
     using E_Learning.Data;
     using E_Learning.Dto.Response;
-    using E_Learning.Dto.Response.Admin;
+using E_Learning.Dto.Response.admin;
+using E_Learning.Dto.Response.Admin;
     using E_Learning.Entity;
     using E_Learning.Middlewares;
     using E_Learning.Models.Response;
@@ -104,7 +105,7 @@
                     Enabled = u.Enabled,
                     Gender = u.Gender.ToString(),
                     Role = u.Role.Name,
-                    CreatedAt = u.CreatedAt
+                    CreateAt = u.CreatedAt
                 }).AsQueryable();
 
                 // Trả về phân trang kết quả

@@ -5,7 +5,7 @@ namespace E_Learning.Servies
 {
     public interface IAdvertisementService
     {
-        Task<AdsCreationResponse> CreateAdsAsync(AdsCreationRequest request);
+        Task<Dto.Response.AdsCreationResponse> CreateAdsAsync(AdsCreationRequest request);
         Task<List<AdsActiveResponse>> GetAdsWithActive();
     }
 }

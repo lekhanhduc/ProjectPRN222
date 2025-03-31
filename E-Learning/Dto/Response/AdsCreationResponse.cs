@@ -30,7 +30,7 @@ namespace E_Learning.Dto.Response
         [JsonProperty("endDate")]
         public DateOnly EndDate { get; set; }
 
-        public decimal PriceAds { get; set; }
+        public decimal? PriceAds { get; set; } 
 
         public AdsStatus Status { get; set; }
 

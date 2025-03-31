@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace E_Learning.Migrations
 {
     /// <inheritdoc />
-    public partial class FixCourseModel : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -35,7 +35,7 @@ namespace E_Learning.Migrations
                 {
                     id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    email = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     password = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     first_name = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -48,6 +48,7 @@ namespace E_Learning.Migrations
                     description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     dob = table.Column<DateOnly>(type: "date", nullable: false),
                     level = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    qr_code = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     enabled = table.Column<bool>(type: "bit", nullable: false),
                     role_id = table.Column<int>(type: "int", nullable: false),
                     registration_status = table.Column<string>(type: "nvarchar(50)", nullable: true),
@@ -61,6 +62,7 @@ namespace E_Learning.Migrations
                     cv_url = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     facebook_link = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     points = table.Column<long>(type: "bigint", nullable: false),
+                    qr = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     created_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     updated_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     create_at = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -92,6 +94,7 @@ namespace E_Learning.Migrations
                     price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     updated_at = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    quantity = table.Column<int>(type: "int", nullable: false),
                     user_id = table.Column<long>(type: "bigint", nullable: false),
                     Enabled = table.Column<bool>(type: "bit", nullable: false),
                     created_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -151,8 +154,8 @@ namespace E_Learning.Migrations
                     image_ads = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     location = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     link = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    start_date = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    end_date = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    start_date = table.Column<DateOnly>(type: "date", nullable: false),
+                    end_date = table.Column<DateOnly>(type: "date", nullable: false),
                     approval_status = table.Column<string>(type: "nvarchar(50)", nullable: false),
                     created_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     updated_by = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -593,6 +596,12 @@ namespace E_Learning.Migrations
                 name: "IX_reviews_UserId",
                 table: "reviews",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_users_email",
+                table: "users",
+                column: "email",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_users_role_id",

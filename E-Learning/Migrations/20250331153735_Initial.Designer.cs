@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_Learning.Migrations
 {
     [DbContext(typeof(ELearningDbContext))]
-    [Migration("20250329161529_Vu_UserQr")]
-    partial class Vu_UserQr
+    [Migration("20250331153735_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -64,8 +64,8 @@ namespace E_Learning.Migrations
                         .HasColumnType("TEXT")
                         .HasColumnName("description");
 
-                    b.Property<DateTime?>("EndDate")
-                        .HasColumnType("datetime2")
+                    b.Property<DateOnly>("EndDate")
+                        .HasColumnType("date")
                         .HasColumnName("end_date");
 
                     b.Property<string>("Image")
@@ -84,8 +84,8 @@ namespace E_Learning.Migrations
                         .HasColumnType("decimal(18,2)")
                         .HasColumnName("price");
 
-                    b.Property<DateTime?>("StartDate")
-                        .HasColumnType("datetime2")
+                    b.Property<DateOnly>("StartDate")
+                        .HasColumnType("date")
                         .HasColumnName("start_date");
 
                     b.Property<string>("Title")
@@ -311,6 +311,10 @@ namespace E_Learning.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18, 2)")
                         .HasColumnName("price");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int")
+                        .HasColumnName("quantity");
 
                     b.Property<string>("Thumbnail")
                         .IsRequired()
@@ -791,7 +795,7 @@ namespace E_Learning.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("email");
 
                     b.Property<bool>("Enabled")
@@ -854,6 +858,10 @@ namespace E_Learning.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("qr");
 
+                    b.Property<string>("QrCode")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("qr_code");
+
                     b.Property<string>("RefreshToken")
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("refresh_token");
@@ -883,6 +891,9 @@ namespace E_Learning.Migrations
                         .HasColumnName("zip_code");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
 
                     b.HasIndex("RoleId");
 
@@ -926,7 +937,7 @@ namespace E_Learning.Migrations
             modelBuilder.Entity("E_Learning.Entity.Chapter", b =>
                 {
                     b.HasOne("E_Learning.Entity.Course", "Course")
-                        .WithMany()
+                        .WithMany("Chapters")
                         .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1124,6 +1135,8 @@ namespace E_Learning.Migrations
             modelBuilder.Entity("E_Learning.Entity.Course", b =>
                 {
                     b.Navigation("Certificates");
+
+                    b.Navigation("Chapters");
 
                     b.Navigation("Enrollments");
 

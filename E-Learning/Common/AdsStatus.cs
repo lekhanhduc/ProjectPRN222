@@ -2,6 +2,11 @@
 {
     public enum AdsStatus
     {
-        PENDING, AWAIT_PAYMENT, COMPLETED, CANCEL
+        PENDING,
+        AWAITING_PAYMENT,
+        ACTIVE,
+        COMPLETED,
+        CANCELLED,
+        REJECTED
     }
 }

@@ -95,6 +95,7 @@ namespace E_Learning
             builder.Services.AddScoped<AdminCourseService>();
             builder.Services.AddScoped<RegisterTeacherService>();
             builder.Services.AddScoped<FileService>();
+            builder.Services.AddScoped<IAdminAdvertisementService, AdminAdvertisementService>();
 
             builder.Services.AddDbContext<ELearningDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));

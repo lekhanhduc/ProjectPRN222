@@ -52,9 +52,6 @@ namespace E_Learning.Entity
         [Column("level")]
         public string? Level { get; set; }
 
-        [Column("qr_code")]
-        public string? QrCode { get; set; }
-
         [Column("enabled")]
         public bool Enabled { get; set; } = true;
 
@@ -98,7 +95,7 @@ namespace E_Learning.Entity
         public long Points { get; set; } = 0;
 
         [Column("qr")]
-        public string Qr { get; set; }
+        public string? Qr { get; set; }
 
         // Posts của User
         public ICollection<Post> Posts { get; set; } = new List<Post>();

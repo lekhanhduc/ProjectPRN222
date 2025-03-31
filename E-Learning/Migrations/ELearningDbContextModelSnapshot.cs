@@ -61,8 +61,8 @@ namespace E_Learning.Migrations
                         .HasColumnType("TEXT")
                         .HasColumnName("description");
 
-                    b.Property<DateTime?>("EndDate")
-                        .HasColumnType("datetime2")
+                    b.Property<DateOnly>("EndDate")
+                        .HasColumnType("date")
                         .HasColumnName("end_date");
 
                     b.Property<string>("Image")
@@ -81,8 +81,8 @@ namespace E_Learning.Migrations
                         .HasColumnType("decimal(18,2)")
                         .HasColumnName("price");
 
-                    b.Property<DateTime?>("StartDate")
-                        .HasColumnType("datetime2")
+                    b.Property<DateOnly>("StartDate")
+                        .HasColumnType("date")
                         .HasColumnName("start_date");
 
                     b.Property<string>("Title")
@@ -308,6 +308,10 @@ namespace E_Learning.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18, 2)")
                         .HasColumnName("price");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int")
+                        .HasColumnName("quantity");
 
                     b.Property<string>("Thumbnail")
                         .IsRequired()
@@ -788,7 +792,7 @@ namespace E_Learning.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("email");
 
                     b.Property<bool>("Enabled")
@@ -847,7 +851,6 @@ namespace E_Learning.Migrations
                         .HasColumnName("points");
 
                     b.Property<string>("Qr")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("qr");
 
@@ -880,6 +883,9 @@ namespace E_Learning.Migrations
                         .HasColumnName("zip_code");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
 
                     b.HasIndex("RoleId");
 
@@ -923,7 +929,7 @@ namespace E_Learning.Migrations
             modelBuilder.Entity("E_Learning.Entity.Chapter", b =>
                 {
                     b.HasOne("E_Learning.Entity.Course", "Course")
-                        .WithMany()
+                        .WithMany("Chapters")
                         .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1121,6 +1127,8 @@ namespace E_Learning.Migrations
             modelBuilder.Entity("E_Learning.Entity.Course", b =>
                 {
                     b.Navigation("Certificates");
+
+                    b.Navigation("Chapters");
 
                     b.Navigation("Enrollments");
 
