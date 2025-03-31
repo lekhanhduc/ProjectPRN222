@@ -1,4 +1,5 @@
 ﻿using E_Learning.Data;
+using E_Learning.Dto.Response.admin;
 using E_Learning.Entity;
 using Microsoft.EntityFrameworkCore;
 
@@ -63,5 +64,38 @@ namespace E_Learning.Repositories
         }
 
 
+        public List<AdminUserBuyDTO> GetUserBuyStatsByMonth(int month, int year)
+        {
+            var start = new DateTime(year, month, 1);
+            var end = start.AddMonths(1).AddTicks(-1);
+
+            return _context.Enrollments
+                .Where(e => e.Purchased && e.CreatedAt >= start && e.CreatedAt <= end)
+                .GroupBy(e => e.User)
+                .Select(g => new AdminUserBuyDTO
+                {
+                    UserId = g.Key.Id,
+                    FullName = g.Key.FullName,
+                    TotalCoursesBought = g.Count()
+                })
+                .ToList();
+        }
+
+        public List<AdminUserBuyDTO> GetUserBuyStatsByYear(int year)
+        {
+            var start = new DateTime(year, 1, 1);
+            var end = start.AddYears(1).AddTicks(-1);
+
+            return _context.Enrollments
+                .Where(e => e.Purchased && e.CreatedAt >= start && e.CreatedAt <= end)
+                .GroupBy(e => e.User)
+                .Select(g => new AdminUserBuyDTO
+                {
+                    UserId = g.Key.Id,
+                    FullName = g.Key.FullName,
+                    TotalCoursesBought = g.Count()
+                })
+                .ToList();
+        }
     }
 }

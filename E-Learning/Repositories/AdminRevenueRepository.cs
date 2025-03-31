@@ -2,59 +2,33 @@
 using E_Learning.Dto.Response.admin;
 using E_Learning.Entity;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace E_Learning.Repositories
 {
-    public class PaymentRepository
+    public class AdminRevenueRepository
     {
-
         private readonly ELearningDbContext _context;
 
-        public PaymentRepository(ELearningDbContext context)
+        public AdminRevenueRepository(ELearningDbContext context)
         {
             _context = context;
         }
 
-        public async Task CreatePayment(Payment payment)
+        public List<Payment> GetPaymentsByYear(int year)
         {
-            await _context.Payments.AddAsync(payment);
-            await _context.SaveChangesAsync();
-        }
+            var start = new DateTime(year, 1, 1);
+            var end = start.AddYears(1).AddTicks(-1);
 
-        public async Task<Payment> FindByOrderCode(int orderCode)
-        {
-            return await _context.Payments.FirstOrDefaultAsync(payment => payment.OrderCode == orderCode);
-        }
-
-        public async Task<Payment> FindByOrderCode(long orderCode)
-        {
-            return await _context.Payments
-                .Include(payment => payment.Course)
-                .Include(payment => payment.User)
-                .FirstOrDefaultAsync(payment => payment.OrderCode == orderCode);
-        }
-
-        public async Task UpdatePayment(Payment payment)
-        {
-            _context.Payments.Update(payment);
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task<List<Payment>> FindByCourse(Course course)
-        {
-            return await _context.Payments
-                .Where(p => p.Course.Id == course.Id)
-                .ToListAsync();
-        }
-            public List<Payment> GetPaymentsByYear(int year)
-        {
             return _context.Payments
                 .Include(p => p.Course)
                     .ThenInclude(c => c.Author)
                         .ThenInclude(a => a.Role)
-                .Where(p => p.CreatedAt.Year == year)
+                .Where(p => p.CreatedAt >= start && p.CreatedAt <= end)
                 .ToList();
         }
+
+
 
         public List<Payment> GetPaymentsByMonth(int month, int year)
         {

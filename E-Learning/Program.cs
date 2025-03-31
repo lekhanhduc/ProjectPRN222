@@ -78,6 +78,10 @@ namespace E_Learning
             builder.Services.AddScoped<EnrollmentRepository>();
             builder.Services.AddScoped<PaymentRepository>();
             builder.Services.AddScoped<RoleRepository>();
+            builder.Services.AddScoped<AdminRevenueRepository>();
+            builder.Services.AddScoped<AdminRevenueService>();
+            builder.Services.AddScoped<IAdminReviewService, AdminReviewService>();
+            builder.Services.AddScoped<ReviewRepository>();
             builder.Services.AddScoped<IAdminUserService, AdminUserService>();
             builder.Services.AddScoped<ChapterRepository>();
             builder.Services.AddScoped<LessonRepository>();
@@ -91,6 +95,7 @@ namespace E_Learning
             builder.Services.AddScoped<AdminCourseService>();
             builder.Services.AddScoped<RegisterTeacherService>();
             builder.Services.AddScoped<FileService>();
+
             builder.Services.AddDbContext<ELearningDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
